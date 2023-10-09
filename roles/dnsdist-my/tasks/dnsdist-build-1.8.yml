@@ -1,0 +1,109 @@
+---
+#vars:
+#  dnsdist_version: '1.7.4'
+- stat:
+    path: "/opt/dnsdist-{{ dnsdist_version }}"
+  register: dnsdiststat
+
+- name: Create directory for dnsdist tar.gz files-1.8
+  file:
+    path: /usr/local/src/dnsdist
+    state: directory
+    mode: 0755
+
+- name: Install gcc gcc-c++ fstrm fstrm-devel libedit-devel boost boost-devel lua lua-devel and other...
+  dnf: name={{packages}} state=present
+  vars:
+    packages:
+      - gcc
+      - gcc-c++
+      - fstrm
+      - fstrm-devel
+      - libedit-devel
+      - boost
+      - boost-devel
+      - lua
+      - lua-devel
+      - libselinux-devel
+      - libselinux-python3
+      - libsodium
+      - lmdb-libs
+      - luajit
+      - re2
+      - tinycdb
+      - yum-plugin-priorities
+
+- name: Download dnsdist tar.gz
+  get_url:
+    url: "https://downloads.powerdns.com/releases/dnsdist-1.7.4.tar.bz2"
+    dest: "/usr/local/src/dnsdist/dnsdist-1.7.4.tar.bz2"
+    owner: root
+    group: root
+    mode: 0640
+#  environment:
+#    http_proxy: "http://10.252.155.6:3128/"
+#    https_proxy: "http://10.252.155.6:3128/"
+
+#- name: Copy distribution
+#  copy:
+#    src: dnsdist-{{ dnsdist_version }}.tar.bz2
+#    dest: /usr/local/src/dnsdist/dnsdist-{{ dnsdist_version }}.tar.bz2
+#    owner: root
+#    group: root
+#    mode: 0644
+
+- name: "Extract dnsdist tar.bz2 into "
+  unarchive:
+    remote_src: 'True'
+    src: "/usr/local/src/dnsdist/dnsdist-1.7.4.tar.bz2"
+    dest: "/usr/local/src/dnsdist/"
+
+- debug:
+    msg: "Внимание в /opt/ уже есть скомпилированный каталог dnsdist-1.7.4! и мы не станем ничего собирать"
+  when: dnsdiststat.stat.isdir is defined and dnsdiststat.stat.isdir
+
+- name: Running ./configure for dnsdist
+  command: >
+       ./configure 
+       --bindir=/usr/bin
+       --sbindir=/usr/sbin
+       --libexecdir=/usr/libexec
+       --sysconfdir=/etc
+       --sharedstatedir=/var/lib
+       --localstatedir=/var/lib
+       --libdir=/usr/lib64
+       --datadir=/usr/share
+       --localedir=/opt/dnsdist-1.7.4
+       --mandir=/usr/share/man
+       --docdir=/opt/dnsdist-1.7.4
+       --htmldir=/opt/dnsdist-1.7.4
+       --enable-dnstap
+  args:
+    chdir: "/usr/local/src/dnsdist/dnsdist-1.7.4/"
+    creates: Makefile
+  when: dnsdiststat.stat.isdir is not defined
+
+- name: Running "make" for dnsdist
+  command: "{{ item }}"
+  args:
+    chdir: "/usr/local/src/dnsdist/dnsdist-1.7.4/"
+  environment:
+    STD_CDEFINES: '-DISC_SOCKET_MAXEVENTS=4096 -DRCVBUFSIZE=1M -DRESOLVER_NTASKS=512 -DUDPBUFFERS=32K -DEXCLBUFFERS=32K'
+  with_items:
+    - "make"
+  when: dnsdiststat.stat.isdir is not defined
+
+- name: Running "make install" for dnsdist
+  command: "make install"
+  args:
+    chdir: "/usr/local/src/dnsdist/dnsdist-1.7.4/"
+  when: dnsdiststat.stat.isdir is not defined
+
+- name: Copy ver. 1.8.0
+  copy:
+    src: dnsdist
+    dest: /usr/bin/dnsdist
+    owner: root
+    group: root
+    mode: 0755
+    follow: yes

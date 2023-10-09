@@ -1,0 +1,103 @@
+-- control config
+webserver("0.0.0.0:8083")
+setWebserverConfig({ password="{{dnsdist_web_pass }}", apiKey="{{dnsdist_web_APIkey }}",acl="0.0.0.0/0" })
+
+--Пока комментируем
+--{% if dnsdist_web_acl is defined %}
+webserver("{{ ansible_facts.ens33.ipv4.address }}:8083", "{{ dnsdist_web_pass }}", "{{ dnsdist_web_APIkey }}", {["X-Frame-Options"]= "", ["X-XSS-Protection"]=""}, "{{ dnsdist_web_acl | join(',') }}")
+--{% else %}
+--webserver("{{ ansible_facts.ens33.ipv4.address }}:8083", "{{ dnsdist_web_pass }}", "{{ dnsdist_web_APIkey }}", {["X-Frame-Options"]= "", ["X-XSS-Protection"]=""})
+--{% endif %}
+
+controlSocket('127.0.0.1:5199')
+setConsoleACL('127.0.0.0/8')
+{{ dnsdist_setKey | default('') }}
+-- listen adress
+{% for ip_addr in dnsdist_listenIP %}
+newServer('{{ ip_addr }}')
+{% endfor %}
+-- ACL
+setACL({'127.0.0.0/8'})
+{% for ip_access in dnsdist_acl %}
+addACL('{{ ip_access }}')
+{% endfor %}
+-- Server Policies
+-- https://dnsdist.org/guides/serverselection.html
+setServerPolicy(leastOutstanding)
+setServFailWhenNoServer(true)
+--
+-- Performance Tuning
+-- https://dnsdist.org/advanced/tuning.html
+{% if dnsdist_GlobalConfig is defined %}
+{% for config in dnsdist_GlobalConfig %}
+{{ config }}
+{% endfor %}
+{% endif %}
+--
+{% if dnsdist_action is defined %}
+{% for action in dnsdist_action %}
+addAction({{ action }})
+{% endfor %}
+{% endif %}
+--
+{% if dnsdist_CacheHitResponse is defined %}
+{% for action in dnsdist_CacheHitResponse %}
+addCacheHitResponseAction({{ action }})
+{% endfor %}
+{% endif %}
+--
+{% if dnsdist_Response is defined %}
+{% for action in dnsdist_Response %}
+addResponseAction({{ action }})
+{% endfor %}
+{% endif %}
+--
+-- dlya dobavleniya dinamicheskoy blokirovki na osnove statiskiki paketov
+-- https://dnsdist.org/guides/dynblocks.html
+{% if dnsdist_DynBlockRules is defined %}
+dbr = dynBlockRulesGroup()
+{% for action in dnsdist_DynBlockRules %}
+dbr:{{ action }}
+{% endfor %}
+function maintenance()
+  dbr:apply()
+end
+{% endif %}
+-- Downstream Servers
+-- https://dnsdist.org/guides/downstreams.html
+-- Caching Responses
+-- https://dnsdist.org/guides/cache.html
+-- newPacketCache(10000, {maxTTL=86400, minTTL=0, temporaryFailureTTL=60, staleTTL=60, dontAge=false})
+-- Assuming an average response size of 512 bytes, a cache size of 10000000 entries on a 64-bit host with 8GB of dedicated RAM would be a safe choice.
+--
+{% for views in dnsdist_views %}
+-- views {{ views.pool }}
+{% for node in views.node %}
+newServer({address="{{ node.ip }}", name="{{ node.name }}", pool="{{ views.pool }}", useClientSubnet=True, maxCheckFailures="{{ dnsdist_max_check_failures }}"})
+{% endfor %}
+{% if views.PacketCache.name is defined %}
+{% if views.PacketCache.size is defined %}
+pc_{{ views.PacketCache.name }} = newPacketCache({{ views.PacketCache.size }}, {maxTTL={{ views.PacketCache.maxTTL|default(dnsdist_PacketCache_TTLx) }}, minTTL={{ views.PacketCache.minTTL|default(0) }}, maxNegativeTTL={{ views.PacketCache.maxNegativeTTL|default(3600) }}, temporaryFailureTTL={{ views.PacketCache.temporaryFailureTTL|default(3600) }}, numberOfShards={{ views.PacketCache.numberOfShards|default(1) }} })
+{% endif %}
+getPool("{{ views.pool }}"):setCache(pc_{{ views.PacketCache.name }})
+{% endif %}
+{% if views.client_ip is defined %}
+match_clients_{{ views.pool }} = newNMG()
+{% for client_ip in views.client_ip %}
+match_clients_{{ views.pool }}:addMask("{{ client_ip }}")
+{% endfor %}
+
+--пока комментим
+--addAction(AndRule({NetmaskGroupRule(match_clients_{{ views.pool }}, {% if views.dst is defined %}false{% else %}true{% endif %} )}), PoolAction("{{ views.pool }}"))
+{% endif %}
+{% if views.pool_action is defined %}
+{% for action in views.pool_action %}
+addAction({{ action }})
+{% endfor %}
+{% endif %}
+{% endfor %}
+-- view Drop All
+match_clients_all = newNMG()
+match_clients_all:addMask("0.0.0.0/0")
+addAction(AndRule({NetmaskGroupRule(match_clients_all)}), RCodeAction(5))
+--

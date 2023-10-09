@@ -1,0 +1,98 @@
+---
+- stat:
+    path: "/opt/dnsdist-{{ dnsdist_version }}"
+  register: dnsdiststat
+
+- name: Create directory for dnsdist tar.gz files
+  file:
+    path: /usr/local/src/dnsdist
+    state: directory
+    mode: 0755
+
+- name: Install gcc gcc-c++ fstrm fstrm-devel libedit-devel boost boost-devel lua lua-devel and other...
+  dnf: name={{packages}} state=present
+  vars:
+    packages:
+      - gcc
+      - gcc-c++
+      - fstrm
+      - fstrm-devel
+      - libedit-devel
+      - boost
+      - boost-devel
+      - lua
+      - lua-devel
+      - libselinux-devel
+      - libselinux-python3
+      - libsodium
+      - lmdb-libs
+      - luajit
+      - re2
+      - tinycdb
+      - yum-plugin-priorities
+
+- name: Download dnsdist tar.gz
+  get_url:
+    url: "https://downloads.powerdns.com/releases/dnsdist-{{ dnsdist_version }}.tar.bz2"
+    dest: "/usr/local/src/dnsdist/dnsdist-{{ dnsdist_version }}.tar.bz2"
+    owner: root
+    group: root
+    mode: 0640
+#  environment:
+#    http_proxy: "http://10.252.155.6:3128/"
+#    https_proxy: "http://10.252.155.6:3128/"
+
+#- name: Copy distribution
+#  copy:
+#    src: dnsdist-{{ dnsdist_version }}.tar.bz2
+#    dest: /usr/local/src/dnsdist/dnsdist-{{ dnsdist_version }}.tar.bz2
+#    owner: root
+#    group: root
+#    mode: 0644
+
+- name: "Extract dnsdist tar.bz2 into {{ dnsdist_version }}"
+  unarchive:
+    remote_src: 'True'
+    src: "/usr/local/src/dnsdist/dnsdist-{{ dnsdist_version }}.tar.bz2"
+    dest: "/usr/local/src/dnsdist/"
+
+- debug:
+    msg: "Внимание в /opt/ уже есть скомпилированный каталог dnsdist-{{ dnsdist_version }}! и мы не станем ничего собирать"
+  when: dnsdiststat.stat.isdir is defined and dnsdiststat.stat.isdir
+
+- name: Running ./configure for dnsdist
+  command: >
+       ./configure 
+       --bindir=/usr/bin
+       --sbindir=/usr/sbin
+       --libexecdir=/usr/libexec
+       --sysconfdir=/etc
+       --sharedstatedir=/var/lib
+       --localstatedir=/var/lib
+       --libdir=/usr/lib64
+       --datadir=/usr/share
+       --localedir=/opt/dnsdist-{{ dnsdist_version }}
+       --mandir=/usr/share/man
+       --docdir=/opt/dnsdist-{{ dnsdist_version }}
+       --htmldir=/opt/dnsdist-{{ dnsdist_version }}
+       --enable-dnstap
+  args:
+    chdir: "/usr/local/src/dnsdist/dnsdist-{{ dnsdist_version }}/"
+    creates: Makefile
+  when: dnsdiststat.stat.isdir is not defined
+
+- name: Running "make" for dnsdist
+  command: "{{ item }}"
+  args:
+    chdir: "/usr/local/src/dnsdist/dnsdist-{{ dnsdist_version }}/"
+  environment:
+    STD_CDEFINES: '-DISC_SOCKET_MAXEVENTS=4096 -DRCVBUFSIZE=1M -DRESOLVER_NTASKS=512 -DUDPBUFFERS=32K -DEXCLBUFFERS=32K'
+  with_items:
+    - "make"
+  when: dnsdiststat.stat.isdir is not defined
+
+- name: Running "make install" for dnsdist
+  command: "make install"
+  args:
+    chdir: "/usr/local/src/dnsdist/dnsdist-{{ dnsdist_version }}/"
+  when: dnsdiststat.stat.isdir is not defined

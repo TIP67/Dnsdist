@@ -1,0 +1,46 @@
+[Unit]
+Description=DNS Loadbalancer
+Documentation=man:dnsdist(1)
+Documentation=http://dnsdist.org
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStartPre=/opt/dnsdist/dnsdist --check-config -C /etc/dnsdist/dnsdist.conf
+# Note: when editing the ExecStart command, keep --supervised and --disable-syslog
+ExecStart=/opt/dnsdist/dnsdist --supervised --disable-syslog -u _dnsdist -g _dnsdist -C /etc/dnsdist/dnsdist.conf
+User=_dnsdist
+Group=_dnsdist
+Type=notify
+#######Временно отключено для отладки
+#Restart=on-failure
+#RestartSec=2
+#TimeoutStopSec=5
+#StartLimitInterval=0
+
+# syslog
+SyslogFacility=local4
+
+# Tuning
+LimitNOFILE=163840
+TasksMax=18192
+
+# Sandboxing
+# CapabilityBoundingSet=CAP_NET_BIND_SERVICE CAP_SETGID CAP_SETUID
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+NoNewPrivileges=true
+PrivateDevices=true
+PrivateTmp=true
+ProtectControlGroups=true
+ProtectHome=true
+ProtectKernelModules=true
+ProtectKernelTunables=true
+ProtectSystem=full
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+RestrictRealtime=true
+SystemCallArchitectures=native
+
+[Install]
+WantedBy=multi-user.target
+

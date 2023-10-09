@@ -1,0 +1,14 @@
+---
+#- name: Remove old directory /opt/dnsdist
+#  file:
+#    dest: /opt/dnsdist
+#    state: absent
+
+- name: Create symlink to /opt/dnsdist
+  file:
+    src: "/opt/dnsdist-{{ dnsdist_version }}"
+    dest: /opt/dnsdist
+    owner: root
+    group: root
+    state: link
+  notify: restart dnsdist services

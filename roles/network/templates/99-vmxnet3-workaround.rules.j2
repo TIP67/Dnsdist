@@ -1,0 +1,4 @@
+# {{ ansible_managed }}
+
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="vmxnet3", KERNEL=="eth*", PROGRAM="{{ network_vmxnet3_script_location }} $attr{label}", NAME="eth%c"
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="vmxnet3", KERNEL=="ens*", PROGRAM="{{ network_vmxnet3_script_location }} $attr{label}", NAME="eth%c"

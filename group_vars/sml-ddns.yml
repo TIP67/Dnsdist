@@ -1,0 +1,106 @@
+---
+  COMMIT
+
+sysctl_variables:
+  net.ipv4.ip_forward: 1
+  net.ipv4.neigh.default.gc_thresh1: 1024
+  net.ipv4.neigh.default.gc_thresh2: 2048
+  net.ipv4.neigh.default.gc_thresh3: 4096
+  #net.netfilter.nf_conntrack_max: 1048576
+  #net.nf_conntrack_max: 1048576
+  #net.ipv4.vs.drop_entry: 1
+
+nf_conntrack_hashsize: 200000
+
+# dnsdist_allow_service_restart: false
+dnsdist_setKey: 'setKey("9w7RZZl+JgT5agvqAoXruaf64FGao1neXjKOzO6xzWc=")'
+dnsdist_max_check_failures: "2"
+dnsdist_PacketCache_size: "5000000"
+dnsdist_web_acl:
+  - 127.0.0.0/8
+  - 172.17.3.0/24
+  - 192.168.101.0/24
+  - 10.252.155.224/32
+dnsdist_GlobalConfig:
+  - setVerboseHealthChecks(true)
+  - setMaxTCPClientThreads(100) # def:10
+  - setMaxTCPQueuedConnections(10000) # def: 1000
+  - setMaxUDPOutstanding(65535) # def:65535
+  - setTCPUseSinglePipe(true)
+  - setCacheCleaningDelay(60)
+  - setCacheCleaningPercentage(100)
+  - setStaleCacheEntriesTTL(600)
+  - nmg_bad=newNMG()
+  #- nmg_bad:addMask('95.167.13.42/32')
+  #- nmg_bad:addMask('95.167.13.46/32')
+dnsdist_action:
+  - "AndRule({QTypeRule(DNSQType.ANY), TCPRule(false)}), TCAction()"
+  - NetmaskGroupRule(nmg_bad), RCodeAction(DNSRCode.REFUSED)
+#  - "MaxQPSIPRule(200,32,64,100), DelayAction(500)"
+# dnsdist_CacheHitResponse:
+# dnsdist_Response:
+
+dnsdist_DynBlockRules:
+  - setRCodeRate(DNSRCode.NXDOMAIN, 150, 10, "Exceeded NXD rate", 30, DNSAction.Drop, 100)
+  - setRCodeRate(DNSRCode.SERVFAIL, 100, 10, "Exceeded ServFail rate", 30, DNSAction.Drop, 50)
+  - setQTypeRate(DNSQType.ANY, 50, 10, "Exceeded ANY rate", 10)
+  - excludeRange({"213.177.96.102/32", "82.208.117.122/32"})
+
+dnsdist_views:
+  - views:
+    pool: "abuse"
+    PacketCache:
+      size: 100000
+      name: "abuse"
+    node:
+      - name: "node_ext_5(abuse)"
+        ip: "10.0.1.115:53"
+      - name: "node_ext_6(abuse)"
+        ip: "10.0.1.116:53"
+    # pool_action:
+    #   - "{'bad-domain1.example', 'bad-domain2.example.'}, PoolAction('abuse')"
+    #   - RegexRule("[0-9]{4,}\\.example$"), PoolAction('abuse')
+  - views:
+    pool: "external"
+    PacketCache:
+      size: 1000000
+      name: "external"
+      maxTTL: 21600
+      minTTL: 60
+      maxNegativeTTL: 600
+      numberOfShards: 2
+      temporaryFailureTTL: 60
+    node:
+      - name: "node_ext_1"
+        ip: "10.0.1.111:53"
+      - name: "node_ext_2"
+        ip: "10.0.1.112:53"
+      - name: "node_ext_3"
+        ip: "10.0.1.113:53"
+      - name: "node_ext_4"
+        ip: "10.0.1.114:53"
+      - name: "node_ext_5"
+        ip: "10.0.1.115:53"
+      - name: "node_ext_6"
+        ip: "10.0.1.116:53"
+    pool_action:
+      - "PoolAvailableRule('external'), PoolAction('external')"
+  - views:
+    pool: "fallback"
+    PacketCache:
+      name: "external"
+    node:
+      - name: "fallback_google1"
+        ip: "8.8.8.8:53"
+      - name: "fallback_google2"
+        ip: "8.8.4.4:53"
+      - name: "fallback_Cloudflare1"
+        ip: "1.1.1.1:53"
+      - name: "fallback_Cloudflare2"
+        ip: "1.0.0.1:53"
+      - name: "fallback_NSDI1"
+        ip: "195.208.4.1:53"
+      - name: "fallback_NSDI2"
+        ip: "195.208.5.1:53"
+    pool_action:
+      - "PoolAvailableRule('fallback'), PoolAction('fallback')"

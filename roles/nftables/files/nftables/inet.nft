@@ -1,0 +1,101 @@
+include "/etc/nftables/acl/rt4"
+include "/etc/nftables/acl/ext4"
+include "/etc/nftables/acl/rt6"
+
+include "/etc/nftables/lo.nft"
+include "/etc/nftables/ban.nft"
+include "/etc/nftables/espd.nft"
+include "/etc/nftables/mgmt_SKUD.nft"
+
+#include "/etc/nftables/mirror.nft"
+
+table inet raw {
+  chain prerouting {
+    type filter hook prerouting priority -300; policy accept;
+    meta l4proto { udp, tcp } th dport { 53 } notrack
+    meta l4proto { udp, tcp } th sport { 53 } notrack
+  }
+  chain output {
+    type filter hook output priority -300; policy accept;
+    meta l4proto { udp, tcp } th sport { 53 } notrack
+    meta l4proto { udp, tcp } th dport { 53 } notrack
+  }
+}
+
+table inet filter {
+
+  include "/etc/nftables/evil.nft"
+  include "/etc/nftables/kurwa.nft"
+
+  chain ssh {
+    ip saddr $ban4 drop
+    ip saddr @kurwa4 drop
+    ip6 saddr @kurwa6 drop
+    ip saddr $MGMT4 jump kurwa4
+    ip6 saddr $MGMT6 jump kurwa6
+    drop
+  }
+
+  chain revizor {
+    limit rate 950/second burst 50 packets accept
+    meter rvzr4 { ip saddr limit rate 160/second burst 10 packets } accept
+  }
+
+  chain rt4 {
+    #Rate limit for the system as a whole
+    include "/etc/nftables/rl.nft"
+    ip saddr $espd limit rate 3100/second burst 4000 packets accept comment "ESPD Network"
+    # Drop and log overlimits
+    meter dns4 size 262144 { ip saddr timeout 90s limit rate over 900/second burst 40 packets } jump evil4
+    # Accept traffic below limit and in case meter table overflow
+    accept
+  }
+
+  chain rt6 {
+    #Rate limit for the system as a whole
+    include "/etc/nftables/rl.nft"
+    # Drop and log overlimits
+    meter dns6 size 262144 { ip6 saddr timeout 2m limit rate over 600/second burst 30 packets } jump evil6
+    # Accept traffic below limit and in case meter table overflow
+    accept
+  }
+
+  chain input {
+    type filter hook input priority 0; policy drop;
+    # ip saddr @evil4 drop
+    # ip6 saddr @evil6 drop
+    meta l4proto { tcp, udp, sctp } th dport 53 ip saddr $rt4 jump rt4
+    meta l4proto { tcp, udp, sctp } th dport 53 ip saddr $ext4 jump rt4
+    meta l4proto { tcp, udp, sctp } th dport 53 ip6 saddr $rt6 jump rt6
+    udp dport 3784 ip ttl 255 accept comment "BFD4"
+    udp dport 3784 ip6 hoplimit 255 accept comment "BFD6"
+    # meta l4proto { tcp, udp, sctp } th dport 8083 ip saddr $rt4 jump rt4
+    # meta l4proto { tcp, udp, sctp } th dport 172.22.4.130 ip saddr $rt4 jump rt4
+    # meta l4proto { tcp, udp, sctp } th dport 10051 ip saddr $rt4 jump rt4
+
+    include "/etc/nftables/acl/revizor"
+
+    ct state established accept
+    meta l4proto { udp, tcp, sctp } th dport 53 drop
+    iif != lo ip daddr 127.0.0.0/8 counter drop comment "rpf4 at loopback"
+    iif != lo ip6 daddr ::1/128 counter drop comment "rpf6 at loopback"
+    iif lo accept
+    ct state invalid drop
+    udp dport 3784 ip ttl != 255 drop comment "Evil BFD"
+    udp dport 3784 ip6 hoplimit != 255 drop comment "Evil BFD"
+
+    icmp type echo-request limit rate 4/second burst 2 packets accept
+    icmpv6 type echo-request limit rate 6/second burst 2 packets accept
+    icmp type { destination-unreachable, router-solicitation, router-advertisement, time-exceeded, parameter-problem } accept
+    icmpv6 type { destination-unreachable, packet-too-big, time-exceeded, parameter-problem, mld-listener-report, mld-listener-reduction, nd-router-advert, nd-neighbor-solicit, nd-neighbor-advert, ind-neighbor-solicit, ind-neighbor-advert, mld2-listener-report } accept
+
+    tcp dport rsync ip saddr != { 87.226.129.235 } drop
+    iif != lo ct state new meta l4proto { tcp, sctp } th dport 22 counter jump ssh
+    # Zabbix
+    iif != lo ct state new meta l4proto { tcp, sctp } th dport { 10050, 8083 } ip saddr 172.22.4.130 counter accept
+    # TODO: delete next line
+    iif != lo ct state new meta l4proto { tcp, sctp } th dport { 8083 } ip saddr 212.3.153.144 counter accept
+    meta l4proto { tcp, sctp } th dport { 22, 10050, 8083 } drop
+    meta l4proto { udp, tcp, sctp } th sport 53 counter accept
+  }
+}

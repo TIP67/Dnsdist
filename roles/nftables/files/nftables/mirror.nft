@@ -1,0 +1,18 @@
+# mirror traffic
+define SENSOR = 217.107.64.4
+
+table mangle {
+  chain mirror {
+    type route hook output priority -150; policy accept;
+    meta l4proto { udp, tcp } th sport 53 dup to $SENSOR comment "egress to clients - answers"
+    meta l4proto { udp, tcp } th dport 53 dup to $SENSOR comment "egress to authoritative servers - queries"
+  }
+}
+
+table ip filter {
+  chain mirror {
+    type filter hook prerouting priority -350; policy accept;
+    meta l4proto { udp, tcp } th dport 53 dup to $SENSOR comment "ingress from clients - queries"
+    meta l4proto { udp, tcp } th sport 53 dup to $SENSOR comment "ingress from authoritative servers - answers"
+  }
+}

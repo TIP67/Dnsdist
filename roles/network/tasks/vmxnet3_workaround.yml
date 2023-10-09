@@ -1,0 +1,16 @@
+---
+- name: Copy transform_name script
+  copy:
+    src: transform_name
+    dest: "{{ network_vmxnet3_script_location }}"
+    owner: root
+    group: root
+    mode: 0755
+
+- name: configurations
+  template:
+    src: 99-vmxnet3-workaround.rules.j2
+    dest: "{{ network_vmxnet3_udev_location }}"
+    owner: root
+    group: root
+    mode: 0644

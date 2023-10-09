@@ -1,0 +1,160 @@
+---
+#vars:
+#  dnsdist_version: '1.7.4'
+- stat:
+#    path: "/opt/dnsdist-{{ dnsdist_version }}"
+    path: "/usr/bin"
+  register: dnsdiststat
+
+- name: Create directory for dnsdist tar.gz files-1.8
+  file:
+    path: /usr/local/src/dnsdist
+    state: directory
+    mode: 0755
+
+- name: Install gcc gcc-c++ fstrm fstrm-devel libedit-devel boost boost-devel lua lua-devel and other...
+  dnf: name={{packages}} state=present
+  vars:
+    packages:
+      - gcc
+      - gcc-c++
+      - fstrm
+      - fstrm-devel
+      - libedit-devel
+      - boost
+      - boost-devel
+      - lua
+      - lua-devel
+      - libselinux-devel
+      - libselinux-python3
+      - libsodium
+      - lmdb-libs
+      - luajit
+      - re2
+      - tinycdb
+      - yum-plugin-priorities
+
+#- name: Download dnsdist tar.gz
+#  get_url:
+#    url: "https://downloads.powerdns.com/releases/dnsdist-1.7.4.tar.bz2"
+#    dest: "/usr/local/src/dnsdist/dnsdist-1.7.4.tar.bz2"
+#    owner: root
+#    group: root
+#    mode: 0640
+##  environment:
+##    http_proxy: "http://10.252.155.6:3128/"
+##    https_proxy: "http://10.252.155.6:3128/"
+
+- name: Copy distribution
+  copy:
+    src: dnsdist-1.7.4.tar.bz2
+    dest: /usr/local/src/dnsdist/dnsdist-1.7.4.tar.bz2
+    owner: root
+    group: root
+    mode: 0644
+
+- name: "Extract dnsdist tar.bz2 into "
+  unarchive:
+    remote_src: 'True'
+    src: "/usr/local/src/dnsdist/dnsdist-1.7.4.tar.bz2"
+    dest: "/usr/local/src/dnsdist/"
+
+- name: Running ./configure for dnsdist
+  command: >
+       ./configure 
+       --bindir=/usr/bin
+       --sbindir=/usr/sbin
+       --libexecdir=/usr/libexec
+       --sysconfdir=/etc
+       --sharedstatedir=/var/lib
+       --localstatedir=/var/lib
+       --libdir=/usr/lib64
+       --datadir=/usr/share
+       --localedir=/opt/dnsdist-1.7.4
+       --mandir=/usr/share/man
+       --docdir=/opt/dnsdist-1.7.4
+       --htmldir=/opt/dnsdist-1.7.4
+       --enable-dnstap
+  args:
+    chdir: "/usr/local/src/dnsdist/dnsdist-1.7.4/"
+    creates: Makefile
+
+- name: Running "make" for dnsdist
+  command: "{{ item }}"
+  args:
+    chdir: "/usr/local/src/dnsdist/dnsdist-1.7.4/"
+  environment:
+    STD_CDEFINES: '-DISC_SOCKET_MAXEVENTS=4096 -DRCVBUFSIZE=1M -DRESOLVER_NTASKS=512 -DUDPBUFFERS=32K -DEXCLBUFFERS=32K'
+  with_items:
+    - "make"
+
+- name: Running "make install" for dnsdist
+  command: "make install"
+  args:
+    chdir: "/usr/local/src/dnsdist/dnsdist-1.7.4/"
+
+- name: Copy ver. 1.8.0
+  copy:
+    src: dnsdist
+    dest: /usr/bin/dnsdist
+    owner: root
+    group: root
+    mode: 0755
+    follow: yes
+
+- name: Add the group 'dnsdist'
+  group:
+    name: dnsdist
+    state: present
+ 
+- name: Add the user 'dnsdist'
+  user:
+    name: dnsdist
+    group: dnsdist
+    shell: /bin/false
+    home: /nonexistent
+    append: yes
+
+- name: Create directory /etc/dnsdist
+  file:
+    path: /etc/dnsdist
+    state: directory
+    mode: 0755
+    owner: root
+    group: dnsdist
+
+- name: Копируем скрипт автозапуска службы в /usr/local/lib/systemd/system/dnsdist.service
+  copy:
+    src: dnsdist.service
+    dest: /usr/lib/systemd/system/dnsdist.service
+    owner: root
+    group: root
+    mode: 0644
+  notify: Restart dnsdist
+
+- name: Для установки службы рестартуем systemd to reread configs (2.4 and above)
+  systemd:
+    daemon_reload: yes
+
+- name: Enable dnsdist.service
+  service:
+    name: dnsdist.service
+    enabled: yes
+
+
+- name: Copy dnsdist_rsyslog.conf /etc/rsyslog.d/dnsdist_rsyslog.conf
+  copy:
+    src: dnsdist_rsyslog.conf
+    dest: /etc/rsyslog.d/dnsdist_rsyslog.conf
+    owner: root
+    group: root
+    mode: 0644
+  notify: Restart rsyslog
+
+- name: Copy dnsdist_logrotate.conf
+  copy:
+    src: dnsdist_logrotate.conf
+    dest: /etc/logrotate.d/dnsdist_logrotate.conf
+    owner: root
+    group: root
+    mode: 0644

@@ -1,0 +1,33 @@
+set evil4 {
+#  typeof ip saddr
+#  comment "inet4 stubborn bruteforcers around the world"
+  type ipv4_addr
+  size 262140
+  flags timeout
+  timeout 4m
+  gc-interval 15s
+}
+
+chain evil4 {
+  # Drop only over limit target traffic
+  ip saddr @evil4 drop
+  # If source address not in table, add and log
+  update @evil4 { ip saddr timeout 3m } log prefix "evil4: " drop
+}
+
+set evil6 {
+#  typeof ip saddr
+#  comment "inet6 stubborn bruteforcers around the world"
+  type ipv6_addr
+  size 262140
+  flags timeout
+  timeout 4m
+  gc-interval 15s
+}
+
+chain evil6 {
+  # Drop only over limit target traffic
+  ip6 saddr @evil6 drop
+  # If source address not in table, add and log
+  update @evil6 { ip6 saddr } log prefix "evil6: " drop
+}

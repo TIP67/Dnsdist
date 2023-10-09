@@ -1,0 +1,31 @@
+set kurwa4 {
+#  typeof ip saddr
+#  comment "inet4 longtime ban list"
+  type ipv4_addr
+  size 262140
+  flags timeout
+  timeout 12m
+  gc-interval 20s
+}
+
+chain kurwa4 {
+  limit rate 20/minute burst 30 packets accept
+  add @kurwa4 { ip saddr } log prefix "kurwa4: "
+  drop
+}
+
+set kurwa6 {
+#  typeof ip6 saddr
+#  comment "inet6 longtime ban list"
+  type ipv6_addr
+  size 262140
+  flags timeout
+  timeout 12m
+  gc-interval 20s
+}
+
+chain kurwa6 {
+  limit rate 20/minute burst 30 packets accept
+  add @kurwa6 { ip6 saddr } log prefix "kurwa6: "
+  drop
+}

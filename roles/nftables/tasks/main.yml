@@ -1,0 +1,27 @@
+  - name: yum install nftables
+    yum:
+      name:
+      - nftables
+
+  - name: Copy config nftables.conf
+    copy:
+      src: nftables.conf
+      dest: /etc/sysconfig/nftables.conf
+      owner: root
+      group: root
+      mode: 0644
+
+  - name: Copy config to /etc/nftables
+    unarchive:
+      src: nftables.tar.gz
+      dest: /etc
+      owner: root
+      group: root
+      mode: 0644
+
+  - name: enabled and start nftables
+    service:
+      name: nftables
+      state: restarted
+      enabled: yes
+

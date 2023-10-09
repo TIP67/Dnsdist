@@ -1,0 +1,287 @@
+resolver_searches:
+  - mts-nn.ru
+resolver_domain: mts-nn.ru
+resolver_hostname: ch-dns-gw3
+
+agent_server: "10.252.155.6, 127.0.0.1"
+
+sshd_ListenAddress:
+  - "10.22.0.35:22"
+
+firewall_sshguard_whitelist_additional:
+  - 10.77.201.224/27
+
+network_iproute2_configure: yes
+network_iproute2_tables:
+  - id: 5
+    name: zebra
+  - id: 10
+    name: vlan201
+  - id: 20
+    name: vlan205
+  - id: 30
+    name: vlan202
+  - id: 40
+    name: vlan203
+  - id: 50
+    name: vlan207
+  - id: 60
+    name: vlan204
+
+module_dummy_num: 2
+
+network_allow_service_restart: no
+network_interfaces:
+  # vlan201 Man
+  - device: eth0
+    description: 'vlan201-man'
+    auto: true
+    allow: ['hotplug']
+    family: inet
+    method: static
+    address: 10.22.0.35
+    netmask: 255.255.255.128
+    # gateway: 10.22.0.1
+    post-up:
+      - ip route add 10.22.0.0/25 dev eth0 src 10.22.0.35 table vlan201
+      - ip route add default via 10.22.0.1 table vlan201
+      - ip route add 127.0.0.0/8 dev lo table vlan201
+      - ip rule add from 10.22.0.35 table vlan201
+      - ip route add 10.252.152.0/24 via 10.22.0.1 dev eth0
+      - ip route add 10.252.153.0/24 via 10.22.0.1 dev eth0
+      - ip route add 10.252.154.0/24 via 10.22.0.1 dev eth0
+      - ip route add 10.252.155.0/24 via 10.22.0.1 dev eth0
+      - ip route add 10.252.156.0/24 via 10.22.0.1 dev eth0
+      - ip route add 10.77.201.0/24 via 10.22.0.1 dev eth0
+      - ip route add 10.77.202.0/24 via 10.22.0.1 dev eth0
+      - ip route add 10.77.203.0/24 via 10.22.0.1 dev eth0
+      - /sbin/ethtool --set-ring eth0 rx 4096 tx 4096 2>/dev/null || /bin/true
+      - /sbin/ethtool -K eth0 sg off tso off gso off gro off 2>/dev/null || /bin/true
+    pre-down:
+      - ip route del 10.22.0.0/25 dev eth0 src 10.22.0.35 table vlan201
+      - ip route del default via 10.22.0.1 table vlan201
+      - ip route del 127.0.0.0/8 dev lo table vlan201
+      - ip rule del from 10.22.0.35 table vlan201
+
+  # vlan205 for mirroring dns traf
+  - device: eth1
+    description: 'vlan205-dns-mirror'
+    auto: true
+    allow: ['hotplug']
+    family: inet
+    method: static
+    address: 192.168.81.234
+    netmask: 255.255.255.248
+    post-up:
+      - /sbin/ethtool --set-ring eth1 rx 4096 tx 4096 2>/dev/null || /bin/true
+
+  # vlan202 BGP1
+  - device: eth2
+    description: 'vlan202-bgp1'
+    auto: true
+    allow: ['hotplug']
+    family: inet
+    method: static
+    address: 10.22.0.134
+    netmask: 255.255.255.224
+    post-up:
+      - /sbin/ethtool --set-ring eth2 rx 4096 tx 4096 2>/dev/null || /bin/true
+
+  # vlan203 BGP2
+  - device: eth3
+    description: 'vlan203-bgp2'
+    auto: true
+    allow: ['hotplug']
+    family: inet
+    method: static
+    address: 10.22.0.166
+    netmask: 255.255.255.224
+    post-up:
+      - /sbin/ethtool --set-ring eth3 rx 4096 tx 4096 2>/dev/null || /bin/true
+
+  # vlan207 NetRecursor
+  - device: eth4
+    description: 'vlan207-dns-NetRecursor'
+    auto: true
+    allow: ['hotplug']
+    family: inet
+    method: static
+    address: 10.0.1.103
+    netmask: 255.255.255.0
+    post-up:
+      - /sbin/ethtool --set-ring eth4 rx 4096 tx 4096 2>/dev/null || /bin/true
+      - /sbin/ethtool -K eth4 sg off tso off gso off gro off 2>/dev/null || /bin/true
+
+  # vlan204 Recursor ETH
+  - device: eth5
+    description: 'vlan204-Recursor-ETH'
+    auto: true
+    allow: ['hotplug']
+    family: inet
+    method: static
+    address: 89.151.176.164
+    netmask: 255.255.255.240
+    #gateway: 89.151.176.161
+    post-up:
+      - ip route add 89.151.176.160/28 dev eth5 src 89.151.176.164 table vlan204
+      - ip route add default via 89.151.176.161 table vlan204
+      - ip route add 127.0.0.0/8 dev lo table vlan204
+      - ip rule add from 89.151.176.164 table vlan204
+      - ip route add 8.8.8.8 via 89.151.176.161 || /bin/true
+      - ip route add 8.8.4.4 via 89.151.176.161 || /bin/true
+      - ip route add 1.1.1.1 via 89.151.176.161 || /bin/true
+      - ip route add 1.0.0.1 via 89.151.176.161 || /bin/true
+      - ip route add 195.208.4.1 via 89.151.176.161 || /bin/true
+      - ip route add 92.127.157.217 via 89.151.176.161 || /bin/true      
+      - ip route add 195.208.5.1 via 89.151.176.161 || /bin/true
+      - /sbin/ethtool --set-ring eth5 rx 4096 tx 4096 2>/dev/null || /bin/true
+      - /sbin/ethtool -K eth5 sg off tso off gso off gro off 2>/dev/null || /bin/true
+    pre-down:
+      - ip route del 89.151.176.160/28 dev eth5 src 89.151.176.164 table vlan204
+      - ip route del default via 89.151.176.161 table vlan204
+      - ip route del 127.0.0.0/8 dev lo table vlan204
+      - ip rule del from 89.151.176.164 table vlan204
+      - ip route del 8.8.8.8 via 89.151.176.161 || /bin/true
+      - ip route del 8.8.4.4 via 89.151.176.161 || /bin/true
+      - ip route del 1.1.1.1 via 89.151.176.161 || /bin/true
+      - ip route del 1.0.0.1 via 89.151.176.161 || /bin/true
+      - ip route del 92.127.157.217 via 89.151.176.161 || /bin/true      
+
+  # vlan205 for mirroring dns traf rt-solar
+  - device: eth6
+    description: 'vlan205-dns-mirror rt-solar'
+    auto: true
+    allow: ['hotplug']
+    family: inet
+    method: static
+    address: 192.168.82.234
+    netmask: 255.255.255.248
+    post-up:
+      - /sbin/ethtool --set-ring eth6 rx 4096 tx 4096 2>/dev/null || /bin/true
+
+  - device: dummy0
+    description: 'dummy0-dns-recursor-ip-1'
+    auto: true
+    allow: ['hotplug']
+    family: inet
+    method: static
+    address: 89.151.191.2
+    netmask: 255.255.255.255
+    pre-up:
+      - /sbin/modprobe dummy numdummies={{ module_dummy_num }}
+    post-up:
+      - ip rule add from 89.151.191.2 lookup zebra
+    pre-down:
+      - ip rule del from 89.151.191.2 lookup zebra
+
+  - device: dummy1
+    description: 'dummy1-dns-recursor-ip-2'
+    auto: true
+    allow: ['hotplug']
+    family: inet
+    method: static
+    address: 89.151.190.213
+    netmask: 255.255.255.255
+    post-up:
+      - ip rule add from 89.151.190.213 lookup zebra
+    pre-down:
+      - ip rule del from 89.151.190.213 lookup zebra
+
+# Quagga
+
+quagga_hostname_zebra: ch-dns-gw3-z
+quagga_hostname_bgp: ch-dns-gw3-b
+
+####### ZEBRA CONF #######
+quagga_zebra_handler_conf: |
+  ! # Ansible managed
+
+quagga_zebra_conf: |
+  !
+  interface dummy0
+   ip address 89.151.191.2/32
+  !
+  interface dummy1
+   ip address 89.151.190.213/32
+  !
+  interface eth0
+   link-detect
+  !
+  interface eth1
+   link-detect
+  !
+  interface eth2
+   link-detect
+  !
+  interface eth3
+   link-detect
+  !
+  interface eth4
+   link-detect
+  !
+  interface eth5
+   link-detect
+  !
+  interface lo
+  !
+  table 5
+  ip prefix-list ZEBRA_ROUTES seq 5 permit 0.0.0.0/0 le 32
+  !
+  route-map SRC_IP permit 10
+   match ip address prefix-list ZEBRA_ROUTES
+   set src 89.151.176.164
+  !
+  ip forwarding
+  !
+  ip protocol bgp route-map SRC_IP
+  !
+  line vty
+  !
+####### ZEBRA CONF END #######
+
+####### BGP CONF #######
+quagga_bgp_handler_conf: |
+  ! # Ansible managed
+
+quagga_bgpd_conf: |
+  !log syslog
+  !
+  router bgp 64513
+   bgp router-id 89.151.176.164
+   network 89.151.190.213/32
+   network 89.151.191.2/32
+   timers bgp 20 60
+   neighbor 10.22.0.129 remote-as 43468
+   neighbor 10.22.0.129 update-source 10.22.0.134
+   neighbor 10.22.0.129 soft-reconfiguration inbound
+   neighbor 10.22.0.129 route-map OUT out
+   neighbor 10.22.0.161 remote-as 43468
+   neighbor 10.22.0.161 update-source 10.22.0.166
+   neighbor 10.22.0.161 soft-reconfiguration inbound
+   neighbor 10.22.0.161 route-map OUT out
+   distance bgp 150 255 255
+  !
+   address-family ipv6
+   exit-address-family
+   exit
+  !
+  ip prefix-list OUT1 seq 10 permit 89.151.190.213/32
+  ip prefix-list OUT2 seq 10 permit 89.151.191.2/32
+  !
+  route-map OUT permit 10
+   match ip address prefix-list OUT1
+   set metric 201
+  route-map OUT permit 20
+   match ip address prefix-list OUT2
+   set metric 202
+  !
+  line vty
+  !
+####### BGP CONF END #######
+
+dnsdist_listenIP:
+  - 89.151.176.164
+  - 89.151.191.2
+  - 89.151.191.2
+  - 89.151.190.213
+  - 89.151.190.213

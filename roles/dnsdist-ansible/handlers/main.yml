@@ -1,0 +1,26 @@
+---
+# the sleep in the restart dnsdist handler
+# is needed to make sure the service has been
+# correctly stopped before being started again during restarts
+
+- name: Reload systemd and restart dnsdist
+  ansible.builtin.systemd:
+    daemon_reload: true
+  notify: Restart dnsdist
+  when: not dnsdist_disable_handlers
+
+- name: Restart dnsdist
+  ansible.builtin.service:
+    name: dnsdist
+    state: restarted
+  when: dnsdist_service_state != 'stopped' and not dnsdist_disable_handlers
+
+- name: Restart rsyslog
+  ansible.builtin.service:
+    name: rsyslog
+    state: restarted
+#    enabled: yes
+
+- name: Update the APT cache
+  ansible.builtin.apt:
+    update_cache: true

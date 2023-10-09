@@ -1,0 +1,17 @@
+- hosts: "{{ grp | default('all') }}"
+  gather_facts: true
+  become: true
+  vars: 
+    dnsdist_version: "1.8.0"
+    dnsdist_web_pass: "DnsDist"
+    dnsdist_web_APIkey: "DnsDist"
+    namesrv: "dnsdist4"
+    ifcfg: 
+      - 'ens33'
+      - 'ens36'
+      - 'ens192'
+  roles:
+#    - zabbix_agent2-redos
+#    - nftables
+    - dnsdist-ansible
+

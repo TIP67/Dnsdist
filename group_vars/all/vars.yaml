@@ -1,0 +1,241 @@
+---
+users:
+  - {username : s.sadovnikov,       pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL0I0QiQ6a1rS57WeeKLIcxutkYHx3vSMOxxV0k9LtQn s.sadovnikov@volga.rt.ru }
+  - {username : s.bogdanov,         pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOsCa5n03YVnVFa010WeGtcuijPD3ysWtVBn3rCM2lSr sergey.v.bogdanov@nw.rt.ru }
+  - {username : a.guzilov,          pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKjsqTwUlC1fGqC5EquKz6Z04VJmiZFZilmdCE3oTRHS aleksandr.guzilov@nw.rt.ru }
+  - {username : a.kanogin,          pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEAnAuoR7peDtAroQSHkcdMlPcoFCuaihCDAPolNEfhw a.kanogin@volga.rt.ru }
+  - {username : a.latukhin,         pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAxxyP+iCnxyA9iJ3KcclpF8wk+3e0qUsFOWjfLbIoPM a.latukhin@volga.rt.ru }
+  - {username : a.perov,            pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDs85u5koBxhNjl6xvl/yucwgZwHr/RUkyJN9/6WTW3S a.perov@volga.rt.ru }
+  - {username : s.arsenev,          pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINtdpdvNHNdXdjJgpQrVOCJZqhLZwN1EidgIl1ncAYt5 sergey.arsenev@rt.ru }
+  - {username : a.taratin,          pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEfFe5t2Fd/bbB9Gf0zPRnfd7vQD4WUvmO64mfX6gmmB a.taratin@volga.rt.ru }
+  - {username : dnikiforov,         pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN32xfknsIctojPFPPATGo3ATrl9quQwjU6EUUseEJnY Dmitriy.V.Nikiforov@sibir.rt.ru }
+  - {username : e.kravchenko,       pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID0oHhkjQBUrUhIlSjRDVjldxpFM33K5HaxEBL5zgaPW kravchenkokk@dv.rt.ru }
+  - {username : kipros,             pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICkpzzkDJpPPG7fmkQR1yibMs51f5Zcn7vctCPnubZuv kipraysv@dv.rt.ru }
+  - {username : kosolapov,          pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEEBrDtsVt735iogTKulfc0IClESJjULvcPQsTluyTJR andrej.kosolapov@volga.rt.ru }
+  - {username : a.martyanova,       pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN6IDf6kultaB/5vKoS9GoDrGbcqYMPN2hjz0mxeYlsz arina.martyanova@nw.rt.ru }
+  - {username : medoed,             pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDC9cuH/nK5+dWBj/62uLig/9XCrKVaZ4KiljuvebHN1 boris.gont@nw.rt.ru }
+  - {username : shitov,             pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAfSEwQDsS/FCUOB+JT+Pk8ClJvm9vmG10FF9001JX3d shitov@volga.rt.ru }
+  - {username : v.mogilkin,         pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMGUpYLdVUDiTNoV1sAj41g8mODiHd6vAOWp1gfophZp v.mogilkin@volga.rt.ru }
+  - {username : v.shaidulov,        pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOzpefOQq2JBpUxFtZYmG3KMdQwOy6eK1UTQt9aSOVW/ v.shaidulov@volga.rt.ru }
+  - {username : julia,              pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO/XO8H9q+JBu2PiRFJj9mVYL9cEmasvEoL68NyL4HQa Yuliya.Zykova@south.rt.ru }
+  - {username : d.slynko,           pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMEYW90vNikFdJ0uhHbC+CvpaS2Twm7LSd+LEBOrUD2N dmitriy.slynko@nw.rt.ru }
+  - {username : d.gordyushin,       pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIzOnisQX75+9geQPssT4Ihmw9UHURBf+QvGNtguD6fK dmitriy.gordyushin@rt.ru }
+#  - {username : evgeniy.shadrintsev, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIJJqFKEmMjgAVykkGYYCnUDHROT/KFXX/8tP0emP6eg evgeniy.shadrintsev@south.rt.ru }
+  - {username : r.lutaenko,         pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGBewJDR2AJ7RsUTOfg+/Xca0Lg/q/Ge4KgrxVjSlYkG roman.lutaenko@rt.ru }
+  - {username : cas,                pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHzVQS9dsmKQOGMrIk4q7Jre9EHiAv02TtRvHNr1sOAy churzinas@dv.rt.ru }
+  - {username : s.masharov,         pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC2x7n8qaKnO8el2Qv6rZLvP6Al3t/34lE7COPCf3AyD Sergey.Masharov@nw.rt.ru }
+  - {username : dmitriy.skachkov,   pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKlGrtq2TAIG71Cf1cVWwN/XNQ8NniRYIN28XfDmMZ7J eddsa-key-20220719 dmitriy.skachkov@rt.ru }
+  - {username : k.yashin,           pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKKkr3Z0wjWUR9V80PaHNAiCCn7YbNJQO2NCKtyKMhWw konstantin.yashin@rt.ru }
+  - {username : d.ershov,           pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICaVQw47o3UupHpDgr+nUp7DDwDinqz0vqh/JXb1x8l5 d.ershov@volga.rt.ru }
+  - {username : k.sorokin,          pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOmZ8oCcloRnIMBGFngOgYNHQ9LTiobsOItJhn68dnWL kirill.sorokin@sibir.rt.ru }
+  - {username : a.belashov,         pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJMj6/kwwcHlQlwic/89ndL3+btmi+WrEzRuXEe9a0zG Andrey.Belashov@center.rt.ru }
+  - {username : a.dementev,         pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE8zRa6BdK9u54Zz5hTOswMKzThQxCR0hRMMTnwiSujx Andrey_Dementev@center.rt.ru }
+  - {username : i.tikhonov,         pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJw8As7lST0+jrEFp8I64S+CRhEwB+368prUK8KhRuG1 i.p.tikhonov@center.rt.ru }
+  - {username : b.matveev,          pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEFUa4SvzHIZEdksbc7X5pJpOFWAzqr03zE5eyaE9kyz boris.matveev@nw.rt.ru }
+  - {username : i.mazminov,         pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJnNCFQCZ2aBGif23fyXUi7NqrrY4XNvVzj0fOqgE0Ij ilya.mazminov@sibir.rt.ru }
+  - {username : pv.nagorny,         pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKjhsXVYEjsWqq7zouJQEwUL49qcWvnOFWoSxWweejXm Pavel_Nagorniy@center.rt.ru }
+  - {username : v.voloshin,         pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDB+itfHhXvXNk85mJFVckBKGWVmuQxPTcOXJjupT3wD Viktor_Voloshin@center.rt.ru }
+  - {username : a.vershinin,        pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBgKYdc38T7CC+hxNwL/LgkUqNDUF+ZOtlVl3G9qUfsV vershinin.a@south.rt.ru }
+  - {username : a.podyachev,        pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGEGG4n+0niIAG+DnaXJcuOV0SgzB0m+/ckHy28GGXDd artem.podyachev@sibir.rt.ru }
+  - {username : d.protsyshin,       pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJDMzXZMmbUOOss2LT39SZLl7bIPI15x5xH5NMLJ1SoI dmitriy.protsyshin@rt.ru }
+
+  - {username : s.sadovnikov, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL0I0QiQ6a1rS57WeeKLIcxutkYHx3vSMOxxV0k9LtQn s.sadovnikov@volga.rt.ru }
+  - {username : s.bogdanov, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOsCa5n03YVnVFa010WeGtcuijPD3ysWtVBn3rCM2lSr sergey.v.bogdanov@nw.rt.ru }
+  - {username : a.guzilov, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKjsqTwUlC1fGqC5EquKz6Z04VJmiZFZilmdCE3oTRHS aleksandr.guzilov@nw.rt.ru }
+  - {username : a.kanogin, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEAnAuoR7peDtAroQSHkcdMlPcoFCuaihCDAPolNEfhw a.kanogin@volga.rt.ru }
+  - {username : a.latukhin, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAxxyP+iCnxyA9iJ3KcclpF8wk+3e0qUsFOWjfLbIoPM a.latukhin@volga.rt.ru }
+  - {username : a.perov, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDs85u5koBxhNjl6xvl/yucwgZwHr/RUkyJN9/6WTW3S a.perov@volga.rt.ru }
+  - {username : s.arsenev, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINtdpdvNHNdXdjJgpQrVOCJZqhLZwN1EidgIl1ncAYt5 sergey.arsenev@rt.ru }
+  - {username : a.taratin, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEfFe5t2Fd/bbB9Gf0zPRnfd7vQD4WUvmO64mfX6gmmB a.taratin@volga.rt.ru }
+  - {username : dnikiforov, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN32xfknsIctojPFPPATGo3ATrl9quQwjU6EUUseEJnY Dmitriy.V.Nikiforov@sibir.rt.ru }
+  - {username : e.kravchenko, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID0oHhkjQBUrUhIlSjRDVjldxpFM33K5HaxEBL5zgaPW kravchenkokk@dv.rt.ru }
+  - {username : kipros, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICkpzzkDJpPPG7fmkQR1yibMs51f5Zcn7vctCPnubZuv kipraysv@dv.rt.ru }
+  - {username : kosolapov, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEEBrDtsVt735iogTKulfc0IClESJjULvcPQsTluyTJR andrej.kosolapov@volga.rt.ru }
+  - {username : a.martyanova, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN6IDf6kultaB/5vKoS9GoDrGbcqYMPN2hjz0mxeYlsz arina.martyanova@nw.rt.ru }
+  - {username : medoed, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDC9cuH/nK5+dWBj/62uLig/9XCrKVaZ4KiljuvebHN1 boris.gont@nw.rt.ru }
+  - {username : shitov, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAfSEwQDsS/FCUOB+JT+Pk8ClJvm9vmG10FF9001JX3d shitov@volga.rt.ru }
+  - {username : v.mogilkin, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMGUpYLdVUDiTNoV1sAj41g8mODiHd6vAOWp1gfophZp v.mogilkin@volga.rt.ru }
+  - {username : v.shaidulov, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOzpefOQq2JBpUxFtZYmG3KMdQwOy6eK1UTQt9aSOVW/ v.shaidulov@volga.rt.ru }
+  - {username : julia, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO/XO8H9q+JBu2PiRFJj9mVYL9cEmasvEoL68NyL4HQa Yuliya.Zykova@south.rt.ru }
+  - {username : d.slynko, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMEYW90vNikFdJ0uhHbC+CvpaS2Twm7LSd+LEBOrUD2N dmitriy.slynko@nw.rt.ru }
+  - {username : d.gordyushin, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIzOnisQX75+9geQPssT4Ihmw9UHURBf+QvGNtguD6fK dmitriy.gordyushin@rt.ru }
+  - {username : r.lutaenko, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGBewJDR2AJ7RsUTOfg+/Xca0Lg/q/Ge4KgrxVjSlYkG roman.lutaenko@rt.ru }
+  - {username : cas, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHzVQS9dsmKQOGMrIk4q7Jre9EHiAv02TtRvHNr1sOAy churzinas@dv.rt.ru }
+  - {username : s.masharov, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC2x7n8qaKnO8el2Qv6rZLvP6Al3t/34lE7COPCf3AyD Sergey.Masharov@nw.rt.ru }
+  - {username : k.yashin, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKKkr3Z0wjWUR9V80PaHNAiCCn7YbNJQO2NCKtyKMhWw konstantin.yashin@rt.ru }
+  - {username : d.ershov, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICaVQw47o3UupHpDgr+nUp7DDwDinqz0vqh/JXb1x8l5 d.ershov@volga.rt.ru }
+  - {username : k.sorokin, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOmZ8oCcloRnIMBGFngOgYNHQ9LTiobsOItJhn68dnWL kirill.sorokin@sibir.rt.ru }
+  - {username : a.belashov, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJMj6/kwwcHlQlwic/89ndL3+btmi+WrEzRuXEe9a0zG Andrey.Belashov@center.rt.ru }
+  - {username : a.dementev, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE8zRa6BdK9u54Zz5hTOswMKzThQxCR0hRMMTnwiSujx Andrey_Dementev@center.rt.ru }
+  - {username : i.tikhonov, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJw8As7lST0+jrEFp8I64S+CRhEwB+368prUK8KhRuG1 i.p.tikhonov@center.rt.ru }
+  - {username : b.matveev, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEFUa4SvzHIZEdksbc7X5pJpOFWAzqr03zE5eyaE9kyz boris.matveev@nw.rt.ru }
+  - {username : i.mazminov, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJnNCFQCZ2aBGif23fyXUi7NqrrY4XNvVzj0fOqgE0Ij ilya.mazminov@sibir.rt.ru }
+  - {username : pv.nagorny, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKjhsXVYEjsWqq7zouJQEwUL49qcWvnOFWoSxWweejXm Pavel_Nagorniy@center.rt.ru }
+  - {username : v.voloshin, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDB+itfHhXvXNk85mJFVckBKGWVmuQxPTcOXJjupT3wD Viktor_Voloshin@center.rt.ru }
+  - {username : a.vershinin, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBgKYdc38T7CC+hxNwL/LgkUqNDUF+ZOtlVl3G9qUfsV vershinin.a@south.rt.ru }
+  - {username : d.protsyshin, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJDMzXZMmbUOOss2LT39SZLl7bIPI15x5xH5NMLJ1SoI dmitriy.protsyshin@rt.ru }
+  - {username : a.kazachenko, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGI29k9B+sCKCYjpCdmQr9oTx5FJEGmY93+BB2yE3gD3 andrey.kazachenko@sibir.rt.ru }
+  - {username : vualid, pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG4eg4fPYvFNnZi8YKw+QqDFggnDFF4IvmLdFcD2wdRx vualid.khusamal-din@nw.rt.ru }
+
+
+
+users_dhcp:
+  - {username : s.sadovnikov,       pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL0I0QiQ6a1rS57WeeKLIcxutkYHx3vSMOxxV0k9LtQn s.sadovnikov@volga.rt.ru }
+  - {username : a.kanogin,          pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEAnAuoR7peDtAroQSHkcdMlPcoFCuaihCDAPolNEfhw a.kanogin@volga.rt.ru }
+  - {username : s.arsenev,          pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINtdpdvNHNdXdjJgpQrVOCJZqhLZwN1EidgIl1ncAYt5 sergey.arsenev@rt.ru }
+  - {username : kosolapov,          pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEEBrDtsVt735iogTKulfc0IClESJjULvcPQsTluyTJR andrej.kosolapov@volga.rt.ru }
+  - {username : d.gordyushin,       pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIzOnisQX75+9geQPssT4Ihmw9UHURBf+QvGNtguD6fK dmitriy.gordyushin@rt.ru }
+  - {username : r.lutaenko,         pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGBewJDR2AJ7RsUTOfg+/Xca0Lg/q/Ge4KgrxVjSlYkG roman.lutaenko@rt.ru }
+  - {username : cas,                pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHzVQS9dsmKQOGMrIk4q7Jre9EHiAv02TtRvHNr1sOAy churzinas@dv.rt.ru }
+  - {username : s.masharov,         pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC2x7n8qaKnO8el2Qv6rZLvP6Al3t/34lE7COPCf3AyD Sergey.Masharov@nw.rt.ru }
+  - {username : a.belashov,         pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJMj6/kwwcHlQlwic/89ndL3+btmi+WrEzRuXEe9a0zG Andrey.Belashov@center.rt.ru }
+  - {username : a.dementev,         pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE8zRa6BdK9u54Zz5hTOswMKzThQxCR0hRMMTnwiSujx Andrey_Dementev@center.rt.ru }
+  - {username : i.tikhonov,         pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJw8As7lST0+jrEFp8I64S+CRhEwB+368prUK8KhRuG1 i.p.tikhonov@center.rt.ru }
+  - {username : i.mazminov,         pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJnNCFQCZ2aBGif23fyXUi7NqrrY4XNvVzj0fOqgE0Ij ilya.mazminov@sibir.rt.ru }
+  - {username : pv.nagorny,         pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKjhsXVYEjsWqq7zouJQEwUL49qcWvnOFWoSxWweejXm Pavel_Nagorniy@center.rt.ru }
+  - {username : v.voloshin,         pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDB+itfHhXvXNk85mJFVckBKGWVmuQxPTcOXJjupT3wD Viktor_Voloshin@center.rt.ru }
+  - {username : vualid,             pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG4eg4fPYvFNnZi8YKw+QqDFggnDFF4IvmLdFcD2wdRx vualid.khusamal-din@nw.rt.ru }
+  - {username : a.kazachenko,       pubkey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGI29k9B+sCKCYjpCdmQr9oTx5FJEGmY93+BB2yE3gD3 andrey.kazachenko@sibir.rt.ru }
+
+usersrsa:
+  - {username : s.sadovnikov,       pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCjjhcdxPs6EgwHr4pfbceusATxOy2NB5RETq3RiYbdWtva/LpitqC3nO/E6kerRXBMhtD+QeJZPYYqDq3yKcudBGe2YLfSSMEl8WRIIRwPChP2oHHYRxPhz5YTG8DTrnLAgy5YKSXp8dXaOak+JP8IHT2KoHZZBEcfgGarc+Hu0da4DfG8ib830Rbtbxwwjgg88ML0WyDXE0NIDkNLKhLjxSbWRL2IgUin5mzLrrpAIHNgmN6Uqystk8jpjhHGGnT/H7wm6ENN4rdIpmquQC9+3L5WULAgYLZ7W6ABapEkgdlwQs4gIk5dhe5HMARPZZ0tK6iiVG0AhhOQSZ3etdOdnPNjTFcrE4UdlmpVUic3UTT+p47gT0HFBPT2UffW0L8fCmsk+rkmnee4exeFyCvf3F7zb05EEx414bepN/qGvR4sqKg5Zz6JowjV80jW0f72oDQsiXaa29164leyBh+ZZd5/3hqScMmwjjToi0CevYlgwbq9KUYRq10VDmAOglY4gfERkIXU01s92Jsf/vskOeFEetRCnknrC8/0elszwdp+3vDVSFnEarUMWEBFY7XxpTGcxo0apN1VmW17Nu9qXUAFVmveF1cbMchPmudGP0a9BrQd0C29NNA/QDUKG+07jKf4UsMnViXQYMkiIzu2KDmo6+zI6wreie4acJs7mw== s.sadovnikov@volga.rt.ru }
+  - {username : s.bogdanov,         pubkey:  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQChYuBE/baB0pSUSwQ5+85dC5gA7EtKCndHSvg4g3A748gfcGZM+cdbJdl2oIO4uf9KwBpK6Xv9yvv4m8BmKfI1mmeqruRCx+2+kj8Ko0Lm62co0knQ7ohmAFKSjzTxrRgXaBPGmrpAkmgTzZFgKmlpXtjUraT9mA07eloNOiAc/u8icSqp0tvuofcfqVQIF7mkQGH5W1Yy8D+Z8v1pPYILSyBM6Hck4Pr9gfheMcs1AVv9sDUsojZRZMA2hemI+6AAVcVqyZ7HFGLtFoIlxdVIBJaix94z1WLjY1ntpwrg0vZ2xPtfEe8iM0AebrQsjUCz6go+hBhaW206T23hhK+l sergey.v.bogdanov@nw.rt.ru }
+  - {username : a.guzilov,          pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDC8sI+jegpHzoTNtLV+YqRseTkXUkSQLDjZ+b4Cue9ZEwcCjTmmvxZ9PHaUKHANEK4szHszrfZob1zyjkn17/rzbT7YVeXsYcAGoZOdJrZnUckJJxXWISnUSv1jheQ14ayHqsXgF5UAmcJR6znkIXwSwZW52hwSkGVR936aGFhAHuzJLA+2JHpb7vgHRRkO2U73G9hA94mMMc+f3G+egcMS3diJ8pwphCzdNPQJfQq9BqNjrHNXGOFzDgVR0iYCQahkKoLeMZ7JOK3p6CgxWKa+sNcKmF4XPVDSWVY3xQ22MPiwtd9awpZSx1hHHFNWwfzIh2JHyyW4AHr9DxcI0Bt aleksandr.guzilov@nw.rt.ru }
+  - {username : a.kanogin,          pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC+e6ZMh+WQHYOmQIH1Pm36KUGJG5JRMC3vp8XS1eUkC/Em+3qIxQdBghObZNNxGD5lEJy2hcjyLfO0m5dYQ0hshbtxc2EmCI4nFfoZx/pcjLILLucQ5T3vTekoEdB8ehheSpsjfTLsQZck0NIjH70FvJO/9+Ylml0bA14cpIu3GDtzM9TCKNBQihGUZItQqauQ+cmnwEBVkp4QJt+tO6uqWC1N6arbbY41NLnjb17YJz2SygJsw3asnIclU5OOTfuGbZq1fDyq6sRDRiuz7w3M66Oi4eXzBo2BDtiLm5H9y83XZ99ZfQsd+kDmc/HxPGS3AEaKFt9ffwOhOBpU0QxW016OpthYyZ0eT04JzdvyHN4qyuJrMbDNr29NdQAKDfrfJVAqgzUu3cJH9yJjp3sx7sg62U4lGVBBOqLHg7BD48ArDMSQszIih3Cgi7wunZUqL4iFEEc6yytUwxXBAEG5yefPqpcmP4zu9juEWJpBr5fUqahOKg0UGq8Y2IMKVdYyLjwEngfa4irNs1R7RJoSW684DBkHbUSD9PbBb291LNeQOn02WKW8pSC41r1yAys23MG6oQD0yMrRe1g7ZlMjMzWOlHqjBnaQyoR/Xgtj7MSFL1CmE4RWh9sRwPnOylsuzje7aiHpAIcA+VRym/Bj0fX3E4Lkj5ClhVU75YRz5w== a.kanogin@volga.rt.ru }
+  # - {username : a.latukhin, pubkey:  }
+  - {username : a.perov,            pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAlX4ZkvESwBZmtHOQDOYe42Q3wbRk8ooOh4jVzEEL4SW+LpOPN2kOTXYIEPAgwcF48bzGA37Y4xAxqv5GxuynfZGTZ/5LbhgNw9vQP5C9cVJcg9ePAdy+LblfgF5S+jJI0EnBkYq332th4uqAHcwQq5sSAk/6dx5XEqnB5Prghl0Fh/c8WdOqF7WHgWnoxaadUIw5n9E19bt9xnJCryEaods6bV1iBzPEtvDTjHd1/GWmI7on1Dva2J0nGXrRYm2Pqk7TPuVAxV25RQRSLaj4aYxkm3oRry0GcOHLwLWsnfgNu5nZiu6hCE9Zhv8A7h28vwb1GqKRrRwANEAFCxrdTQ== a.perov@volga.rt.ru }
+  - {username : s.arsenev,          pubkey:  ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAuxj7nmnVhuSnLZIvj/mPkg3ogL6kzMHB42pTXHQGlaXmfLuDifW0aHm56nD3h4WH1AZfVk6P4e2xBFyCgPSNDUKz1Mhi7aE+OZj5ZSzIc26yT26S54m8kIRVHQcUxwCY+tCqZ2n4v5VgyOtUs3jIptL5m9kiitgu4n5xGRJd2iODotovZvgUZI8ov7ZHjJKJ4IKsNDAK9ziaV4wnc1N2ylDfhhA4juA29UODHlZNADd4wXNOQsUIxuWcztPgEcMMG2rumy28uR3FQ0OD6S2BuoLrX8gBfwSQlSzxcivscmRQQAOoCNG4/FlhH5smPTDzr/KVJKxoN1bJWfvfl6HDhQ== sergey.arsenev@rt.ru }
+  - {username : a.taratin,          pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC4WWz96wb9tCXPbt1DxVB3zvyiwT7zwc4US0Sj6KQsWT+DuVtGvBll0TePJSEai7RHjmdCch7e2ZhqTyxacgC1TRzetZrvs0zaLFP8S1cXelUW0af4RbTjXkD1VmzZ/qNz8FLMVUoAG/tao+eg7tWzYLPL3oZIbyQz3syLkPZrVKkhk9+Acn9qpgmjyCRNadpf98WOGLW6VNBY/bkca6CddcxgfaNqa834qdjiuQbMoPWSNp3htTh1U8EzU8fts3e2zY29BAS9qt9VRtZAnTNl8odofOqD81ZbtAGhnsRuHZMW5lQwBGbbnxbjQFwXUoDFgxGs2tkm0IN0WL1MxmyUHqv+HlrXf8KYfeH2KGNJWxE23gIXfwF2wn9T1PztW9s4fBGgrL494UJn5sjSp/5TsVWJSqCYghanJsVudiN7365pXZmkz3UsqxD6QPnFeJ4JV6OG1E0VOoMHqfyYNMrwi1a+AfP7Z9kRXsuLLxXc9UlvCkk5k7nh+11x0EdwobNFebCWD+o6vnVAPWyiWJspf9r52w8IxXdun5sesr/cbVz4AgPMROR4vfvm/EYi5MDH0CFBHiljWqt1GrIsKF6dheWQKRvkjO+DTDRnzH7CcaVuvsXtcKlZuFgwXWtormxti1PdX4/6ePAbSFhFiF1LNwDBpr34KW2SPPOArCMiPw== a.taratin@volga.rt.ru }
+  - {username : dnikiforov,         pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCcLV9Krjcsly+ZoSKJv0eqMv6ZzJWmTd857wDTpfoTXb0mr8vfuvXgE39LHlxbILfzn6Lv+F5Tjz1WpwJ75wDVNy8xy00GXQB1RZ1aFBvwbXlTIRTIPrRjVL2ToQ7XT+Y7LMliGZaBWPSThUu1+LzpTLj+Jg4xHGhCV4df1lTBigltPQsHmqnmhlE3ymI+lv3EVfSSEog82v+vaNBnOYg24Cz+K/FsN2SGWpKBErRv/HrecODpSb85IWLmK4+OHsGQ9g6T5vI7sDPQ61rojY1hoTam/5XjCOBsJcDLM9EDB9v6aJeEmJn3fcoIMpE86rCpmlswbQwAckvmzz5AOA4jTXfW47YbVbjGgaY5zOxCPNpdtDEdP53Y7wRFbKgrCgM8EVahR6DXaL+WRrDLYWZUBsc64GvvpThoN4ke4h7T5A3TCHzUvXXtbHvaB8JW9eMbSEzfaJQQMOEeVZlTiipFvrQrradHSRxaOsQqRW9S2+xrT3EQYefVbX/Q2kT5igM= Dmitriy.V.Nikiforov@sibir.rt.ru }
+  - {username : e.kravchenko,       pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDkSaikWlWbJdJEBbdabM0aqmwHh9+q5mn1/1nSx0oQZ+XkRFKiyIFs7TSGYUforHMHNG/K5T48+5LlAK+nLgKkWCzDUtSvVb9SUaCjvMyvhRvkc7l4eghtdpV3JI5xPQNDa5GsQSpmzbiiSp+pUI4DdfAd1qP621JknqB3DNZ21tzEJjLHmLDVsbeyz6ab6Wtr/JhxIEx2ceNAjiL5AFYo6lpvUGT7VEvvOnAwQIT8SjM+Czry+i2ttUVSqRH5FMV6Pg7E3S3otpBkh2L4LSKIe7cxY0rL21lIQ0gDMy6eGaH3YYys94ukl0s0xqdY/ndITvTf9kOGdPy3TLF8duOX kee@kee }
+  # - {username : kipros, pubkey:  }
+  - {username : kosolapov,          pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCdEowcy2TYu8LFpzOD9AiUc5qFlt6fQNDL3YCZ1708pol+CA7jxeA4dG2x97xRAc1RaEXAf7d0BfjQbBBPqLTZ2eAzRvscYSlL7LkvPWqN3xgBX9aYWF+gf5Vz5u6HNoYNLdeUzWO4ZHM/7bWf9OEOsDx1EiJJXfefM31ye3/5Gm6pWpqbfSZDWlCKvhzkJ11qFw2PTR7N52tlorelWGBw71PgzVGuqPoeREFV8HJfti7SSNGJ1suK3kr07zJV7+xG4jp0T+U1Ys4vJjG6phTYiG7i9MS40doCPbNv65lIZfoaIMhnbuiK6P41bu+l6UYfHLBcADMrBEYmJcqwSMz/ rsa-key-20220519 }
+  - {username : a.martyanova,       pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAkdhwoif5lwk5nu8eecWzU5Hur2EkVjoOipWtY2amvYBYm8sgeLqVoWCyrBeSVycVX0AKH6d/ImdDnCx6aBdA4zIxjaGfewMwyNAxoisIjV8GZWykdVwThClQayvHyVW4PnZlWvixCtxLWz401ZdNXmV7TG6I/AbN3KU5/1y49n7DL6KU/914VfNXNyA9YjtHmyECmEYDfxQP1LcUtQRl723TgKALzWosxVyEAX7oDlN+VUO8M2nfQIiQtUK+5foXavrNSRbEcLsJkcCjoZZbOUlQgaK4h7VOYnzs91rnN5rSWGXo9hxmPEdQttFQsdQfJ1k6s6eQdrude1ROF665/w== rsa-key-20220519 }
+  # - {username : medoed, pubkey:  }
+  - {username : shitov,             pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC47aQxyclmzefoxWSJimz+JrpzJcaYM2nSXZcLPzD1SqsWAkv4Md5LfMJUtbEVeMwZpTMmf/8WAV41YKgMyEx+3pp+kbJ7YLnXLRxyQ92MwKYlahIpc7D+t7lqY9681TPLLZnMMoGOZMQogkYyOsgz0e+VaLhEFBhmpWHZo0BhIMLkzkGaWJc2bMr5PsqZqiXehv+t1TyF6WqjkPUymmNzpu+9JK0KdGX2Eh4pqGgSEcpezYx4NUQoNmXBYKjEVRnZpuvKsxfXfga9Ihl+JzBR0wYkWQaHnvDLHvRzDyYvLz3PMysJzMQ+EL+dfMO9PCN2KCeBeq0XJ7J1hBUWSCxJ shitov@volga.rt.ru }
+  # - {username : v.mogilkin, pubkey:  }
+  - {username : v.shaidulov,        pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDk+Afb9W+0tbt6je0WlmP4/oR/fS6bc041aQ/Z+dJ2GxsiBZbrYexOyQv0jqnAv7ktd9ZGshja6MoXjoFCi7NRG7Nes+rxQ+XyXhYjake2o2pIXuXJ264lT4LyT855Swg3nt+sTATdAd1M3XlOmtwKtJiPnb1UO4fIJvE9gqrMJm/iyLRSYNcn45Qs2uYYbxsNjhGkdutYGVyvxEtMFM049pAAyJwPVHWuIVPoHyqUqmLPsmVZJW4GNswjnC7tF/obyA+PNzbpO5yGXjl/CaCXqJETlDLLcSbgc3I17SGQKtvFwq8wMBTc+i47kdYRV11qgFDuRp9YJ4A30x/n4SlLDgLbwHWlwFwmyt0C2QbLoJ27RyFxP+REhoD7c78u6DThxJO8sqwuLuZ2fPYbAYD/ifakIHsIg5YTzB63EdgHzykGIIaw1zhkJY3/5G0ZHyQOv4P4cd0A+lJ/xy1naixSCoyYe7ey6fPWH3fqHw3NECTQrp6MnUGkHMWiZb3Tbi0= v.shaidulov }
+  - {username : julia,              pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC7DEavRhMsN8tydacSmhV+fs+mx2Vdevd0ZDMSfYUQiKWGF7NDdM2+zv/8iJNrZeGm4H/fvrYMzLV/7b7tZfUYJSB09bQNgg3UXl7w4jcCLQi37R4S06Ur717zoo35pr1iEKJsbQPS3a5oP26g61B4AX/Fxf9ox0Vpmn93OOYvYoQdwlEAK0duj0RcX6R0IHfPM/2giTh91qXosVXlBmSr6e/jh1cCre4l68rHZ56+8W1QGnpFw7SjcHQ7qFATDXlNeDJSmQH14tKWqFRJg49oWNx826B/LLgxwmQgEBislOeyc8XQfG0tn/ey4CAnSmbKMfJ0EaOizo7lrSVUDBc3 Yuliya.Zykova@south.rt.ru }
+  - {username : d.slynko,           pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDHg505M9ZlA2uXa90P5ksQVJ1IM8VlRwLrABt0IVknAi4kwOJuFkytcGfTfXWwDQU2+9yTX/JuG/Tl8qxmOqBk1T2lwYZxlOd1z4FU2gzciqjBMu3PzKL/SnM55RrTSYgXEKdW3FXxPVUODLZE/zZGEvCJmwiIIXr+UiEFnrsz5LSTGDsVHlJXpLfYNE1XeRRSsoHHnhPVNWnm26ONhKIqzZB4xtJQoY8b+jLO6ZjcXQEePzSbEwEs8l6O4KzHnRhxfioSwCy09BqFwwbi61KKVX/qGCeFT0HVmzJXcEXO7VMV5ZbmUUzGCSCsF7hIZfkrIf0GJe6TEBpSsGpRAsPSs9rBw46sKBhXz67eKDxuM4aucOYOnOORU0lonI17P3dBBvxtGWQyE8vznEYziB6N6TzeQPu/mhUrAtoMGpi91S4IY939+fhy6aeMJJFHUb9CMqmifWW8eVADgQg83lkrcIpe8QKonn1gyvWQKncIe5N/n5Pszer+nRReqSTDfss= dmitriy@sdyrt }
+  - {username : d.gordyushin,       pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCXP7MHvXAtj0dDsMuZtb1PqG/1h8+y0I/n051O4VzdRWf0eHHchStobM00BrOReiEH24LtpGT3hUnUDa+Q8sEG68lXjqWCrn2unnNWl7Yl6QBityOYnp2+tp5p3F+K1xgQWcU2YXqBGNOO1pEY2TPk48/3IatS6GTQmzXfg8X+rNm8PD17VVJL+4OFJzsnM+4OztfhZPpudOvOq47sfPcOE1IqyC6ARqFlbk0zcoh3qzylPS/YmuafAaPdfG7zrWmk7IMRKvVbyF4CVwazPBrtQq7KGDjNe3/AsyBDl2feWoRSeCtzupbnTHIgYmcnodTJ9f9ai86LWbyOE+foBRu9 dmitriy.gordyushin@rt.ru }
+#  - {username : evgeniy.shadrintsev, pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC+QY+bNGjvVVgcCXYK6PvgRhgz/ifKzUAg/0VzpMWZDjRPPX4sM179DwLYzzo8CJKVAV5OXOFkg/BxBuzbwIbareIk6i5Dbmcr3VfJ90CRQYetivcAMx1SculUeyCRJQRuwW7sqGtLiIoM6DGrw7cvZZDK8vCMsdNRPV94P9JfGS3uEljKjoEdHfUIEXo4pQmUZsJ8OUfUwV6xYBkdPCQU2yFXQbBE64HFFmUQV3lgYHofdE2E3rcFXCXf3ad52gzHuuL4bPYkn9vWSRpQ9QzE9xI994LcYyTbq4CSWjuY0NBib1PeG05oh2T1MfuQm37grmbwwydSq4h3XMmoS9L4/V1eOLUPECcq/t9957VoYuSGpf8qBV9M9k3SnVTHeOxfmp6AWS3shaClrUVDIT879PVdPZvQIvH5pbR/3a0zMW8CBgsKSlBJgmT7EhnUWjpfA4rVYFlqydcc1DdKQWtQrHYxMp16xcvuOMdzWfPwP7ilD+iQplbfsuu0doRsmv0= evgeniy.shadrintsev@south.rt.ru }
+  - {username : r.lutaenko,         pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC+qm7azf09+X0WYOmeG7mcDLEAAFwvqyby51mtorjSgJwgliJK0UEw2XLbGBBGWMlc+xT8nP+1f2vae1sA/11cY9iO8YexFHW9pJai5kNl7MvyVgyjET2LWTRsOeMnTdF7y1408q+4zd0zNgl9/MVDEKCV3spURgP8J9AUwroPTAS3rvlVDWTjIfhtFxv5b3EqwWlMm5vI2OHVH4FWFcwOxVa3qEZXusvxjlcJ8fDF7Ksvshd7SA5IviTTFzn13Gu5BovcwC20arjkQnGZ1ntB4hgURJqs014ltKggbSpWZtBPjH9Co6jLSnsJ1zfuZJyT5ryMdO31EZztrIuqv619 roman.lutaenko@rt.ru }
+  - {username : cas,                pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAuY6iRADXOmmQZDhOYD2lPzQQ0h5TvToiX467ddjZdMvpU3V502MNVhR0JLc+E5u7viMGgNzaOnCoa9wnsoeXk2qbTyF4zuCZ/TDgnGVKpOQ6SQwntlanVfKmZK1dZgppHp0RmLisB7ke3hdX+/H1uZNTqF1C729uHPBy2hHFxAUSSnbJ1u+NV2Y98mlJQxdPc7nh/X3ncA7Fn4V8zrN3yZDipFlkgcnuYVWV8ZhhMY/oX2f+8z2M59HdkLrn0NqPxSCsH+G1xYmqrDJPYrqLTmW0RLF4GBzQBzSOIVYdQfXk4PQivzw8OL2mIFcaQRLYPGMMILdvSVpRhYacsPlnMw== churzinas@dv.rt.ru }
+  - {username : s.masharov,         pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDci/cfwtoDiEPP6jkUm2Hyn8OMkzbQ8r5/tCFv8gh6OGIzmWalqyux0CVoIdyovtwBf4NwX66BhZBHj5h9q3R4PE7O6NUoaDoMkuDiApXHiKPzuBcogSU48Hjcj/5BGqKFlfJxiByplb24mLgS2sM5DnhWeFDt45JDC3TlT6oG6p7rBFb6hJ3eYaWYL7mpFp8ToXSyS3oPtPO29UpP/xaEHseK8LQiKURwGMYegO0YOIQVGJVHsNt68cvpiGIB08zT6MMjmWGbB9FNXTLxfSVS2RmHA1Mj8RGmju9Dc0bai8+RCErXqQcYrwM0BORPTGBzoX+jnfCmY3u6Id5vFNnt Sergey.Masharov@nw.rt.ru }
+  - {username : k.yashin,           pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAgEAsmyC21vWhLBA1exGHQafCw5urVzn3Yn4dhr41qfyN7RMg0+iijiFs2ONEoaIozLVQyhqMRJFwuuJBcHjPtsEykgyFGNXnI+y4S3ujpCJy4/pV1oV1KEKRTrIDhWA+olw5e+Mfwj1KGOkhdEgqjza4/ykOxXOjueKIh0yFAobW+6V9S6YvDeHQho9W4h9yXaHCkTsqBsQBQzeJOQmfYsA9yepkSoLOI81AR6MPhmanHPdOzzr8nrVdPH/zoVs6CSzTcM8KnawwSiQf1IVnzzUFHP55d4t6fKbc18lb3lFAyuMzr7adGZPjmu8QgOPDma1rPe3Ir9piFQTOFJw7R3j7cNXzpTNl0NQoiFw8ohxgiVkZ8qt3d1+DtIs5l4LwDqSsg6ma6hRNBN/YtAm9ip4EU2i1xr+qFebLK0peaKnw8xgl41fE+HVufcRtIfxmVzM/rDZmtpbY0AoS66P6iGoxtO0jqGvulZUCqld7Ow4ylpT2QcrJa1lTq/WWpcMYS6daMIktakfkOktlr7N+WnxWPCZQTsv0LAPTNzTweElXB+rk0+2Bw17xC32kpfcybCO3scfBYrQrge3pzjTDCFHsORHn+gYq3WyGPVXzsUY5YXUVxbNdo9wLw3TnyeSpZROVsMNJ/HZJ2sh3abDoONNLyv2uh1iGCajMyGjkXF2L3c=  konstantin.yashin@rt.ru }
+    # - {username : d.ershov, pubkey:  }
+  - {username : k.sorokin,          pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDmG7Nr50wFci2KjCMqePz+9SNot/NYE0jQYNHlG+yvUQ5fvuXbqMVOunUf7vFN7MJKWMEkWX+YwhHpDoCWx7SVl8wqqS4oT8JlnPGQpY9UahXO7o8MZ0MQ9jrlmrt/WnJ9+M8SmMjodyDQ0wIH2CGrfFFtg2kyGEQGsKllXizCulc7t8q0Gt23r8jJcT86GoQ5SJBP0YcWrLVkI1/BTRVV3XcIkvkOjkqYqVfD/i9JqmLXPwxd5RAsa6kffzKzYyJ2o7bGp0s7y51PHyi9EGnAGboeNo9yxQ35XN0hVryYC3jnuTnub3RME87hQIexWfBCmc5eaedzObtYFMRzDCFgiYTtSvMKG3vLp9F49UftJCoxHhYX9ZJ5U/Rf46io7wr4O03URS5iahaSfaxKvBug/35knhNlTmDvrADWnYEoPDjS52FOFajGwhNlh/k18qpzwU+avOSBKvQYo86n733V5zaQ/ESco9FdyuMLfvF26JVHrlD0V80rsdS+49fypeU= elster@home }
+  - {username : a.belashov,         pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEA00xiiFNxbUgdTqlCk9PLk5pY9YoBmQaZMHofaBNXbHR7w3W7CL42khK7LLPmVGBLpUhMP2Qs4uu7A1Bl641s9yi72YdY6GpY1tIlme9Bebc02fBWerInsIxupCxwoeMuVI+1iO2FzaVS37R/vtrt/nQCe9N7O7gMc18xkxbnDHc= Andrey.Belashov@center.rt.ru }
+  - {username : a.dementev,         pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCxHU4i5fUC7aP9/4TOTHJGa97ktdXeXe/NQtBd/fWoPWSbds8w4SE9Pp0p4XF/mD7Cbs2OoRaErMszigfAbxM2yaSr04mqIIn49SYShMZh1vPvk0I892cdQedrpRoIEl1qcFziZejrW1GUZaYOrEvYJXcZuepoWZ7G6SjZIhPIbIiu/SSSRdgkse6D/76xy0wPjnyf1ajCHgvl/onBq5B1yAzYAdh+WrFILd2tRFEkkPYW9rQaLDPidSlciQ5HDlixoDcm/mXUfF+SoFHjWLs0cfPH4dOHCV8KOeRU3YuH75bXUGJAoNJ9TN0dA24bBWk43pm49ncWIJ+0XATYMhPNqj08zCepGS187tOP8Ue7U0azJ8emgCskeH1FX9TNvslbNm5dFYb9fAj19cpxOrQcZO7cLscjvU3aneeTB8SYXAusMY3Tt312EpOlXUB99IhaxHhaZEghtrPe7KTf+YuynCl/9DVVNRSBRgOib2Gp60yjNawdjU9td02s7FLIK2E= Andrey_Dementev@center.rt.ru }
+  - {username : i.tikhonov,         pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAig3+yEBF9U82StWWnoX4pxOKyS+liWyKUtrdlbqSAuVvHOiKuBxujv5vGX9Yulzv/TN/ii28nZ/k5tlaNCNE4OZ8VIWZ0nO8Z0+5AUXaJxjBGv61KZhdgSZH9aTvPyJQRbpeTJiWkNmidOfrv25wbo+uGrZHsYuZ0+PyZW8u8VKvnvYwEKPJ/PJ0ZjWr4XZAGsl04hq7G3R5ijz4sb48RwiuA5MF/v3jQ7lp1Z2ITQ1KPMq0EQMBjEr/hiYVW2QnqX6omtou/txxWCnxAs5zMnw79uZOQN1voYdwOXy1zgwnAKkkqUigd1rPP1rA+Ha39KExu/7Wb8VZifa1V1OCrQ== i.p.tikhonov@center.rt.ru }
+  - {username : b.matveev,          pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDTp7sMin6JimxSlnZtDTkdVMpkdbFIy5XlcB1uqVWvEEaBA1PTtrglMeZPZtNGOTHgJaUIeZmnVb8rrxzXBwkRZCcEyNhrpEHN5vyNZ7BbEdZhXHvppvDisfeW0hKs3ZGfulcrJV0eVAbyMuJs+h7pqpcHb4BqFyUv+tbFaJsqwBLXtv3Si6U1ymH3OhUY04mFmN6Um9xO6bgaZhJ1ck2w25bkydwel75kP4HWbm3uk3gQEz2d+OHnzbMeT1sVnzwOJ28gF3T4X9rlO+4U9CWtMKk2/+oUdNavQiXaqu0aiCm3MO1VnTXKW5YEbA1KiXqpr6nWUA5jr65Y/rQZ8Hjf boris.matveev@nw.rt.ru }
+  - {username : i.mazminov,         pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCKJ+j2im35higuRuwfFswYcYgQZRmd5KxxnJUnCygHzrWpZsAPjwi5yGp//lb5RYXg79gkUxi9ZZvgR/pG2bOUyC744RFNetB59hwlTlxkN3KUIe1cKlR3YTjuIWHT9trSUWTIw+nN729LxuPfUR3gNvDm4rHYTTLNvsRSBa3kM1usddzFhPaEyVlvS5Pjop+EACMg9zIotsCrsoHJL4HfI0cGG6M51OiHhQgi4BkoXU/OogrfHyB8/2VNgYqT5JD9Cq3hWr70yS6JW6kvAseZ5/3z+dTczvsUxUL/CFpMe0jicZ8kpTBbuSmPbQHyUI5c1fclhKd51k9+mH9SIkGZ ilya.mazminov@sibir.rt.ru }
+  - {username : pv.nagorny,         pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC561KFZcxJwmKYLcXpRyROrjafzk7rWVS2X3xR7Jj08YZ9JAV5r3DtORccHwrH4oqJ2njCK4IMcqAhMw7PIAQMhHoMju93MhMU/PQNS8w9retmJgCUjYofkZ1VE5cd8se4zgLXxk/KoTSLgzRec9NoxbiTeVf1fDNROmgQ/AO1GpWlBPOhJjx+NbeBuFdKYOqw0HOWhjH+x1qmbrgdlOu667gltlix1UJGn+hWM9emSwA9PkcGfijR+stQ8S6md5AoJWauvI4uqUEgLGVTPmtCd0/RSQjo5AYRqUptrkqMla8rvDP71uZ25A8yQNs0E6Vd6wrlW4geinjgGuJ89Dx3 Pavel_Nagorniy@center.rt.ru }
+  - {username : v.voloshin,         pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAgzspwlnpuvrxjWv0I2UBy07MXHQ9KT3UlkPy744yt6rfOGE5X8eMYWU3wEqqKyYEloa20SRdDGg3r5+QQE+GFEN8IJpFNqQdEmstlkktFTqoKFBhtfJc8Od8XSy8ahh4QOZ8kugEUHfY1HxfZ5JQq7vBC+HwPWhUbF9pAEFGhvpA40buDPPX/d6OoWwNMPvKZoC4xeX0tIjkFXwH2zw4zqvNwrQfltNwXhCk2iUuQ11+jDtS8xjhGXo7DRhq15bPYD3SaM0rtPVS3blerxifD8QidVnzIxcAkEQEulm/ck+8l5HG8EPx2h+5KR/2OIPrE57SOAfOhF7MW3YJsc48sQ== Viktor_Voloshin@center.rt.ru }
+  - {username : a.vershinin,        pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1EedZwlaZNuwGi6K0IdoYcfy9BGGOrIXvYmsEV1Vr0idOtzgk/tfHuUrlyre2qtN7Fv8uAcgpPAq45cb3wbDFdfBt6GlTHCRB8xtan03QQUmOfaLtc+Or0o4Wwwf3zg2yZSq/eBtQ/Hwojl5Ubjr+SE2fkXGUhBY6BKupdbSpPCLln1jWS6HYtK7kINsGDFPPgujR2V7zzLypE21JErQ+A/yEaRxTbS8uFpmQk8pFGaMr/9Dbv1foLG9cLUmvVydhOYKltK7X4NvcPIXNkRNXF/uw/uM0vQHqCoTBnaLZ4phEr2NJZt4mNxFDIRK/Z45dxsuhoIDcpp+bT4feBKRb vershinin.a@south.rt.ru }
+  - {username : a.podyachev,        pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCQVRCrIHvbpQhjNekg6cmdWX/4M0+XoKOOD3dpAguiqMZ+RtFjeHpkXpdOs9UrmKyAOIHleF8m4zPY+9Z+e5j0FZJKoxUo+U10ljrJyXku6MPKhEw/pi7keb8h04LWPb1lHR2sqkc/QKNC2D3gT3zWe0TMabgGH3+qyrZmdTs64F2+sTuxG8BeMttMSyxHKmyfdRoxZMdFgX4yAnawErWLCImPRyyjnkEac2Fu7R52H8wA/jVoe72bzSgIF3aW2Q9QcAnYVS6gDNXUb+xggeuPxY0iSF9jVnbg82ThmfHehtBJo7f/2d/pUKfgPNkXAZ1R3krfx5KHqXPM9nqZ9Bt7 artem.podyachev@sibir.rt.ru }
+  - {username : d.protsyshin,       pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCqwJT6y0FtFTeBG3UwOCe1cqZSJB7h5w+kqnuzfrqDv5zwddJBtQoM9yCN7gzG2OvXTvlVTRsekqGmscximye99n6gLJQU5smPHhrzrpWExfD9ROIvn43kjSUXc8xFlDTWqh34noeO9dwJWDDRSw+6a/TPQbsemGxed9Gv/H62xnUJIz4VWxzF3kfFhdGGansgTPBp4bPrUemgca3DxuQMcT0xwKd/S81KH/49fKjvgvk3LzDyOnQDEAFig8iFZTlF3K7Ox8M4tOCuD1ANPJmY7K3FCb88F8/nHEqFdPRSc4JMSae7Y9AcV4RCpYb32DCkL+tbLXqYocKLHzQYFd2v dmitriy.protsyshin@rt.ru }
+  - {username : a.kazachenko,       pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCppv1AIBw9FjKy+2ehosZogcR8cyAYxACLFNayW3EncbcctN7Lm5yg3uHGz5Dql1iOAYGJaiKjvuwjFS/alLRQBvHQkw6Wb488TcbxvwAyX8uDi3VeUh7NAwvhwBLqZqk3F9rmZOsfQNmq0+WIZE0u+YNbrK5+WrGAMU4VmZIa7Xt5tWxpkgkaTEoEkkVViwXfsshWlXnLkKMYsHl9OAgJbrrK59b66bhEbAJeX9sFO1x6U6xbZLDuVME8xJx78sHkHRfAKgau2Ms3pOQfkRk4zzuqAM3Z2RSuEGin963tMSNIIv0OIzALm3XId6rLEPDNxKOQdntWXb+7KwnrLEqXXLt4wcXcz4jbGb+et/MRGdI4KgIrxYhrJ/u2f06fNVyRB0OaOxlXmrBMh9Nm1c0wE6VMJLGq2fKP34j3J9G1VdWpwPtQrR525aa+2izmJgiJ9Vn/ikiOPGs0xMlOR7lr8O/bs9C3s+u2aFBF8bVBTqElQ6POHXirOb0bJ8ikMMU= andrey.kazachenko@sibir.rt.ru}
+
+usersrsa_dhcp:
+  - {username : s.sadovnikov,       pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCjjhcdxPs6EgwHr4pfbceusATxOy2NB5RETq3RiYbdWtva/LpitqC3nO/E6kerRXBMhtD+QeJZPYYqDq3yKcudBGe2YLfSSMEl8WRIIRwPChP2oHHYRxPhz5YTG8DTrnLAgy5YKSXp8dXaOak+JP8IHT2KoHZZBEcfgGarc+Hu0da4DfG8ib830Rbtbxwwjgg88ML0WyDXE0NIDkNLKhLjxSbWRL2IgUin5mzLrrpAIHNgmN6Uqystk8jpjhHGGnT/H7wm6ENN4rdIpmquQC9+3L5WULAgYLZ7W6ABapEkgdlwQs4gIk5dhe5HMARPZZ0tK6iiVG0AhhOQSZ3etdOdnPNjTFcrE4UdlmpVUic3UTT+p47gT0HFBPT2UffW0L8fCmsk+rkmnee4exeFyCvf3F7zb05EEx414bepN/qGvR4sqKg5Zz6JowjV80jW0f72oDQsiXaa29164leyBh+ZZd5/3hqScMmwjjToi0CevYlgwbq9KUYRq10VDmAOglY4gfERkIXU01s92Jsf/vskOeFEetRCnknrC8/0elszwdp+3vDVSFnEarUMWEBFY7XxpTGcxo0apN1VmW17Nu9qXUAFVmveF1cbMchPmudGP0a9BrQd0C29NNA/QDUKG+07jKf4UsMnViXQYMkiIzu2KDmo6+zI6wreie4acJs7mw== s.sadovnikov@volga.rt.ru }
+  - {username : a.kanogin,          pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC+e6ZMh+WQHYOmQIH1Pm36KUGJG5JRMC3vp8XS1eUkC/Em+3qIxQdBghObZNNxGD5lEJy2hcjyLfO0m5dYQ0hshbtxc2EmCI4nFfoZx/pcjLILLucQ5T3vTekoEdB8ehheSpsjfTLsQZck0NIjH70FvJO/9+Ylml0bA14cpIu3GDtzM9TCKNBQihGUZItQqauQ+cmnwEBVkp4QJt+tO6uqWC1N6arbbY41NLnjb17YJz2SygJsw3asnIclU5OOTfuGbZq1fDyq6sRDRiuz7w3M66Oi4eXzBo2BDtiLm5H9y83XZ99ZfQsd+kDmc/HxPGS3AEaKFt9ffwOhOBpU0QxW016OpthYyZ0eT04JzdvyHN4qyuJrMbDNr29NdQAKDfrfJVAqgzUu3cJH9yJjp3sx7sg62U4lGVBBOqLHg7BD48ArDMSQszIih3Cgi7wunZUqL4iFEEc6yytUwxXBAEG5yefPqpcmP4zu9juEWJpBr5fUqahOKg0UGq8Y2IMKVdYyLjwEngfa4irNs1R7RJoSW684DBkHbUSD9PbBb291LNeQOn02WKW8pSC41r1yAys23MG6oQD0yMrRe1g7ZlMjMzWOlHqjBnaQyoR/Xgtj7MSFL1CmE4RWh9sRwPnOylsuzje7aiHpAIcA+VRym/Bj0fX3E4Lkj5ClhVU75YRz5w== a.kanogin@volga.rt.ru }
+  - {username : s.arsenev,          pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAuxj7nmnVhuSnLZIvj/mPkg3ogL6kzMHB42pTXHQGlaXmfLuDifW0aHm56nD3h4WH1AZfVk6P4e2xBFyCgPSNDUKz1Mhi7aE+OZj5ZSzIc26yT26S54m8kIRVHQcUxwCY+tCqZ2n4v5VgyOtUs3jIptL5m9kiitgu4n5xGRJd2iODotovZvgUZI8ov7ZHjJKJ4IKsNDAK9ziaV4wnc1N2ylDfhhA4juA29UODHlZNADd4wXNOQsUIxuWcztPgEcMMG2rumy28uR3FQ0OD6S2BuoLrX8gBfwSQlSzxcivscmRQQAOoCNG4/FlhH5smPTDzr/KVJKxoN1bJWfvfl6HDhQ== sergey.arsenev@rt.ru }
+  - {username : kosolapov,          pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCdEowcy2TYu8LFpzOD9AiUc5qFlt6fQNDL3YCZ1708pol+CA7jxeA4dG2x97xRAc1RaEXAf7d0BfjQbBBPqLTZ2eAzRvscYSlL7LkvPWqN3xgBX9aYWF+gf5Vz5u6HNoYNLdeUzWO4ZHM/7bWf9OEOsDx1EiJJXfefM31ye3/5Gm6pWpqbfSZDWlCKvhzkJ11qFw2PTR7N52tlorelWGBw71PgzVGuqPoeREFV8HJfti7SSNGJ1suK3kr07zJV7+xG4jp0T+U1Ys4vJjG6phTYiG7i9MS40doCPbNv65lIZfoaIMhnbuiK6P41bu+l6UYfHLBcADMrBEYmJcqwSMz/ rsa-key-20220519 }
+  - {username : d.gordyushin,       pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCXP7MHvXAtj0dDsMuZtb1PqG/1h8+y0I/n051O4VzdRWf0eHHchStobM00BrOReiEH24LtpGT3hUnUDa+Q8sEG68lXjqWCrn2unnNWl7Yl6QBityOYnp2+tp5p3F+K1xgQWcU2YXqBGNOO1pEY2TPk48/3IatS6GTQmzXfg8X+rNm8PD17VVJL+4OFJzsnM+4OztfhZPpudOvOq47sfPcOE1IqyC6ARqFlbk0zcoh3qzylPS/YmuafAaPdfG7zrWmk7IMRKvVbyF4CVwazPBrtQq7KGDjNe3/AsyBDl2feWoRSeCtzupbnTHIgYmcnodTJ9f9ai86LWbyOE+foBRu9 dmitriy.gordyushin@rt.ru }
+  - {username : r.lutaenko,         pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC+qm7azf09+X0WYOmeG7mcDLEAAFwvqyby51mtorjSgJwgliJK0UEw2XLbGBBGWMlc+xT8nP+1f2vae1sA/11cY9iO8YexFHW9pJai5kNl7MvyVgyjET2LWTRsOeMnTdF7y1408q+4zd0zNgl9/MVDEKCV3spURgP8J9AUwroPTAS3rvlVDWTjIfhtFxv5b3EqwWlMm5vI2OHVH4FWFcwOxVa3qEZXusvxjlcJ8fDF7Ksvshd7SA5IviTTFzn13Gu5BovcwC20arjkQnGZ1ntB4hgURJqs014ltKggbSpWZtBPjH9Co6jLSnsJ1zfuZJyT5ryMdO31EZztrIuqv619 roman.lutaenko@rt.ru }
+  - {username : cas,                pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAuY6iRADXOmmQZDhOYD2lPzQQ0h5TvToiX467ddjZdMvpU3V502MNVhR0JLc+E5u7viMGgNzaOnCoa9wnsoeXk2qbTyF4zuCZ/TDgnGVKpOQ6SQwntlanVfKmZK1dZgppHp0RmLisB7ke3hdX+/H1uZNTqF1C729uHPBy2hHFxAUSSnbJ1u+NV2Y98mlJQxdPc7nh/X3ncA7Fn4V8zrN3yZDipFlkgcnuYVWV8ZhhMY/oX2f+8z2M59HdkLrn0NqPxSCsH+G1xYmqrDJPYrqLTmW0RLF4GBzQBzSOIVYdQfXk4PQivzw8OL2mIFcaQRLYPGMMILdvSVpRhYacsPlnMw== churzinas@dv.rt.ru }
+  - {username : s.masharov,         pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDci/cfwtoDiEPP6jkUm2Hyn8OMkzbQ8r5/tCFv8gh6OGIzmWalqyux0CVoIdyovtwBf4NwX66BhZBHj5h9q3R4PE7O6NUoaDoMkuDiApXHiKPzuBcogSU48Hjcj/5BGqKFlfJxiByplb24mLgS2sM5DnhWeFDt45JDC3TlT6oG6p7rBFb6hJ3eYaWYL7mpFp8ToXSyS3oPtPO29UpP/xaEHseK8LQiKURwGMYegO0YOIQVGJVHsNt68cvpiGIB08zT6MMjmWGbB9FNXTLxfSVS2RmHA1Mj8RGmju9Dc0bai8+RCErXqQcYrwM0BORPTGBzoX+jnfCmY3u6Id5vFNnt Sergey.Masharov@nw.rt.ru }
+  - {username : a.belashov,         pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEA00xiiFNxbUgdTqlCk9PLk5pY9YoBmQaZMHofaBNXbHR7w3W7CL42khK7LLPmVGBLpUhMP2Qs4uu7A1Bl641s9yi72YdY6GpY1tIlme9Bebc02fBWerInsIxupCxwoeMuVI+1iO2FzaVS37R/vtrt/nQCe9N7O7gMc18xkxbnDHc= Andrey.Belashov@center.rt.ru }
+  - {username : a.dementev,         pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCxHU4i5fUC7aP9/4TOTHJGa97ktdXeXe/NQtBd/fWoPWSbds8w4SE9Pp0p4XF/mD7Cbs2OoRaErMszigfAbxM2yaSr04mqIIn49SYShMZh1vPvk0I892cdQedrpRoIEl1qcFziZejrW1GUZaYOrEvYJXcZuepoWZ7G6SjZIhPIbIiu/SSSRdgkse6D/76xy0wPjnyf1ajCHgvl/onBq5B1yAzYAdh+WrFILd2tRFEkkPYW9rQaLDPidSlciQ5HDlixoDcm/mXUfF+SoFHjWLs0cfPH4dOHCV8KOeRU3YuH75bXUGJAoNJ9TN0dA24bBWk43pm49ncWIJ+0XATYMhPNqj08zCepGS187tOP8Ue7U0azJ8emgCskeH1FX9TNvslbNm5dFYb9fAj19cpxOrQcZO7cLscjvU3aneeTB8SYXAusMY3Tt312EpOlXUB99IhaxHhaZEghtrPe7KTf+YuynCl/9DVVNRSBRgOib2Gp60yjNawdjU9td02s7FLIK2E= Andrey_Dementev@center.rt.ru }
+  - {username : i.tikhonov,         pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAig3+yEBF9U82StWWnoX4pxOKyS+liWyKUtrdlbqSAuVvHOiKuBxujv5vGX9Yulzv/TN/ii28nZ/k5tlaNCNE4OZ8VIWZ0nO8Z0+5AUXaJxjBGv61KZhdgSZH9aTvPyJQRbpeTJiWkNmidOfrv25wbo+uGrZHsYuZ0+PyZW8u8VKvnvYwEKPJ/PJ0ZjWr4XZAGsl04hq7G3R5ijz4sb48RwiuA5MF/v3jQ7lp1Z2ITQ1KPMq0EQMBjEr/hiYVW2QnqX6omtou/txxWCnxAs5zMnw79uZOQN1voYdwOXy1zgwnAKkkqUigd1rPP1rA+Ha39KExu/7Wb8VZifa1V1OCrQ== i.p.tikhonov@center.rt.ru }
+  - {username : i.mazminov,         pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCKJ+j2im35higuRuwfFswYcYgQZRmd5KxxnJUnCygHzrWpZsAPjwi5yGp//lb5RYXg79gkUxi9ZZvgR/pG2bOUyC744RFNetB59hwlTlxkN3KUIe1cKlR3YTjuIWHT9trSUWTIw+nN729LxuPfUR3gNvDm4rHYTTLNvsRSBa3kM1usddzFhPaEyVlvS5Pjop+EACMg9zIotsCrsoHJL4HfI0cGG6M51OiHhQgi4BkoXU/OogrfHyB8/2VNgYqT5JD9Cq3hWr70yS6JW6kvAseZ5/3z+dTczvsUxUL/CFpMe0jicZ8kpTBbuSmPbQHyUI5c1fclhKd51k9+mH9SIkGZ ilya.mazminov@sibir.rt.ru }
+  - {username : pv.nagorny,         pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC561KFZcxJwmKYLcXpRyROrjafzk7rWVS2X3xR7Jj08YZ9JAV5r3DtORccHwrH4oqJ2njCK4IMcqAhMw7PIAQMhHoMju93MhMU/PQNS8w9retmJgCUjYofkZ1VE5cd8se4zgLXxk/KoTSLgzRec9NoxbiTeVf1fDNROmgQ/AO1GpWlBPOhJjx+NbeBuFdKYOqw0HOWhjH+x1qmbrgdlOu667gltlix1UJGn+hWM9emSwA9PkcGfijR+stQ8S6md5AoJWauvI4uqUEgLGVTPmtCd0/RSQjo5AYRqUptrkqMla8rvDP71uZ25A8yQNs0E6Vd6wrlW4geinjgGuJ89Dx3 Pavel_Nagorniy@center.rt.ru }
+  - {username : v.voloshin,         pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAgzspwlnpuvrxjWv0I2UBy07MXHQ9KT3UlkPy744yt6rfOGE5X8eMYWU3wEqqKyYEloa20SRdDGg3r5+QQE+GFEN8IJpFNqQdEmstlkktFTqoKFBhtfJc8Od8XSy8ahh4QOZ8kugEUHfY1HxfZ5JQq7vBC+HwPWhUbF9pAEFGhvpA40buDPPX/d6OoWwNMPvKZoC4xeX0tIjkFXwH2zw4zqvNwrQfltNwXhCk2iUuQ11+jDtS8xjhGXo7DRhq15bPYD3SaM0rtPVS3blerxifD8QidVnzIxcAkEQEulm/ck+8l5HG8EPx2h+5KR/2OIPrE57SOAfOhF7MW3YJsc48sQ== Viktor_Voloshin@center.rt.ru }
+  - {username : a.kazachenko,       pubkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCppv1AIBw9FjKy+2ehosZogcR8cyAYxACLFNayW3EncbcctN7Lm5yg3uHGz5Dql1iOAYGJaiKjvuwjFS/alLRQBvHQkw6Wb488TcbxvwAyX8uDi3VeUh7NAwvhwBLqZqk3F9rmZOsfQNmq0+WIZE0u+YNbrK5+WrGAMU4VmZIa7Xt5tWxpkgkaTEoEkkVViwXfsshWlXnLkKMYsHl9OAgJbrrK59b66bhEbAJeX9sFO1x6U6xbZLDuVME8xJx78sHkHRfAKgau2Ms3pOQfkRk4zzuqAM3Z2RSuEGin963tMSNIIv0OIzALm3XId6rLEPDNxKOQdntWXb+7KwnrLEqXXLt4wcXcz4jbGb+et/MRGdI4KgIrxYhrJ/u2f06fNVyRB0OaOxlXmrBMh9Nm1c0wE6VMJLGq2fKP34j3J9G1VdWpwPtQrR525aa+2izmJgiJ9Vn/ikiOPGs0xMlOR7lr8O/bs9C3s+u2aFBF8bVBTqElQ6POHXirOb0bJ8ikMMU= andrey.kazachenko@sibir.rt.ru}
+
+usergroups: sudo
+
+jump_skud_user: sergey.sadovnikov
+jump_skud_pass: /home/ss/.pass
+
+users_delete:
+  - s.sadovnikov
+  - s.bogdanov
+  - a.guzilov
+  - a.kanogin
+  - a.latukhin
+  - a.perov
+  - s.arsenev
+  - a.taratin
+  - dnikiforov
+  - e.kravchenko
+  - kipros
+  - a.martyanova
+  - kosolapov
+  - medoed
+  - shitov
+  - v.mogilkin
+  - v.shaidulov
+  - julia
+  - d.slynko
+  - d.gordyushin
+  - r.lutaenko
+  - cas
+  - s.masharov
+  - dmitriy.skachkov
+  - k.yashin
+  - d.ershov
+  - k.sorokin
+  - a.belashov
+  - a.dementev
+  - b.matveev
+  - i.mazminov
+  - pv.nagorny
+  - v.voloshin
+  - a.vershinin
+  - a.podyachev
+  - d.protsyshin
+
+sudo_users_dns:
+  - s.sadovnikov
+  - julia
+  - s.arsenev
+  - a.kanogin
+  - dnikiforov
+#  - evgeniy.shadrintsev
+  - shitov
+  - s.masharov
+  - a.belashov
+  - a.dementev
+  - i.tikhonov
+  - pv.nagorny
+  - v.voloshin
+  - a.taratin
+  - v.mogilkin
+  - e.kravchenko
+  - s.bogdanov
+  - d.slynko
+  - dmitriy.skachkov
+  - k.sorokin
+  - kosolapov
+  - d.ershov
+  - a.latukhin
+
+sudo_users_dhcp:
+  - s.sadovnikov
+  - s.arsenev
+  - a.kanogin
+  - s.masharov
+  - a.belashov
+  - a.dementev
+  - i.tikhonov
+  - pv.nagorny
+  - v.voloshin
+  - kosolapov
+  - i.mazminov
+  - d.gordyushin
+  - r.lutaenko
+  - cas
+  - a.kazachenko
+  

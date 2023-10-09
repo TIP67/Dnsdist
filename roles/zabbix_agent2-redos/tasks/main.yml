@@ -1,0 +1,34 @@
+
+  - name: yum install zabbix-agent2
+    yum:
+      name:
+      - zabbix-agent2
+
+  - name: Start service Zabbix Agent2, if not started
+    ansible.builtin.service:
+      name: zabbix-agent2
+      state: started
+      enabled: yes
+
+  - name: Modify zabbix-agent2 config
+    replace:
+        path: /etc/zabbix/zabbix_agent2.conf
+        regexp: '(^#\s{{ item.category }}=.*$\n+^#*\s{{ item.category }}=.*$)|(^#*\s{{ item.category }}=.*$)'
+        #regexp: '^(#\s){0,1}{{ item.category }}=.*$'
+        replace: '{{ item.category }}={{ item.value }}'
+        backup: yes
+    with_items:
+      - { category: 'LogFileSize', value: '10' }
+      - { category: 'LogType', value: 'file' }
+      - { category: 'DebugLevel', value: '3' }
+      - { category: 'ServerActive', value: '172.17.3.4' }
+      - { category: 'Server', value: '172.17.3.4' }
+      - { category: 'Hostname', value: '{{ zabbix_namesrv }}' }
+      - { category: 'Timeout', value: '20' }
+
+  - name: enabled and start zabbix-agent
+    service:
+      name: zabbix-agent2
+      state: restarted
+      enabled: yes
+

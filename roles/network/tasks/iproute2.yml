@@ -1,0 +1,7 @@
+- name: iproute2 config
+  template:
+    src: rt_tables.j2
+    dest: "{{ network_iproute2_location }}/rt_tables"
+    owner: root
+    group: root
+    mode: 0644

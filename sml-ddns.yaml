@@ -12,6 +12,6 @@
       - 'ens192'
   roles:
 #    - zabbix_agent2-redos
-#    - nftables
-#    - dnsdist
+    - nftables
+    - dnsdist
 

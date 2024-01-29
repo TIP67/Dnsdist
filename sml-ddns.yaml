@@ -10,8 +10,10 @@
       - 'ens33'
       - 'ens160'
       - 'ens192'
+
   roles:
-#    - zabbix_agent2-redos
-#    - nftables
-#    - dnsdist
+
+    - zabbix_agent2-redos
+    - nftables
+    - dnsdist
 

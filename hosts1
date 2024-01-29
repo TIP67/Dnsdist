@@ -1,0 +1,964 @@
+
+# altnet.ru "pw: name too long `egeniy.shadrintsev' (max is 16)\n"
+# ns.kuzbass.net неправильный пароль
+# ns2.kuzbass.net неправильный пароль
+# marr.ab.ru "msg": "Aborting, target uses selinux but python bindings (libselinux-python) aren't installed!"
+
+sz_dhcp:
+  children:
+    sz_sudo:
+      vars:
+        become: true
+        ansible_become_method: sudo
+      hosts:
+        172.17.5.28:
+        172.17.5.29:
+        172.17.5.68:
+        172.17.5.69:
+        172.17.5.77:
+        172.17.5.78:
+        172.17.33.213:
+        172.17.33.215:
+        10.169.160.93:
+        172.17.29.213:
+        172.17.29.215:
+        172.17.41.213:
+        172.17.41.215:
+#        172.17.26.213:
+        172.17.26.215:
+#        172.17.37.213:
+        172.17.37.215:
+        10.168.160.92:
+        10.168.160.93:
+#        172.17.21.213:
+        172.17.21.215:
+sibir:
+  children:
+    sibir_sudo:
+      vars:
+        become: true
+        ansible_become_method: sudo
+      hosts:
+        # Новосибирский филиал
+        dns.sibnet.ru: # авторитативный
+        ns1.sinor.ru:  # авторитативный
+    sibir_su:
+      vars:
+        become: true
+        ansible_become_method: su
+      hosts:
+        # Омский филиал
+        osk-dns1.snt.ru:
+        osk-dns2.snt.ru:
+        # Кемеровский филиал
+        ns.kuzbass.net:   # авторитативный #su - и в группу wheel  # MODULE FAILURE
+        ns2.kuzbass.net:  # авторитативный #su - и в группу wheel  # MODULE FAILURE
+        kem-dns1.snt.ru: 
+        kem-dns2.snt.ru:
+        ns.nvkz.net:    # авторитативный       # Permission denied publickey 
+        ns-rt.nvkz.net: # авторитативный       # unreachable
+        # Новосибирский филиал
+        ns1.snt.ru:  # Permission denied publickey 
+        ns2.snt.ru:  # Permission denied publickey
+        nkz-dns1.snt.ru: # Permission denied publickey 
+        nkz-dns2.snt.ru:
+        nsk-dns1.snt.ru:
+        nsk-dns2.snt.ru:
+        nsk-dns3.snt.ru:
+        nsk-dns4.snt.ru:
+        nsk-dns5.snt.ru:
+        # Томский филиал
+        tom-dns1.snt.ru:
+        tom-dns2.snt.ru:
+        # Красноярский филиал
+        # Абакан
+        abkn-dns1.snt.ru:
+        abkn-dns2.snt.ru:
+        ns3.khakasnet.ru: # авторитативный
+        # Красноярск
+        ksk-dns1.snt.ru:
+        ksk-dns2.snt.ru:
+        ns.krasnet.ru:  # авторитативный    # unreachable
+        ns2.krasnet.ru: # авторитативный    # unreachable
+        ns3.krasnet.ru: # авторитативный    # unreachable
+        # Иркутский филиал
+        irk-dns1.snt.ru:
+        irk-dns2.snt.ru:
+        ns.irtel.ru:    # авторитативный    # Invalid/incorrect password
+        ns2.irtel.ru:   # авторитативный    # Invalid/incorrect password
+        # Бурятский филиал
+        ulnd-dns1.snt.ru:
+        ulnd-dns2.snt.ru:
+        cht-dns1.snt.ru:
+        cht-dns2.snt.ru:
+        ns.chittel.su: # авторитативный     # unreachable
+        ns.stbur.ru:   # авторитативный     # Invalid/incorrect password
+        ns3.stbur.ru:  # авторитативный     # Invalid/incorrect password
+        # Алтайский филиал
+        gak-dns1.snt.ru:
+        gak-dns2.snt.ru:
+        gak-dns3.snt.ru:
+        gak-dns4.snt.ru:
+        marr.ab.ru:   # авторитативный
+        altnet.ru:    # авторитативный
+        dns1.ab.ru:
+        dns2.ab.ru:
+        dns3.ab.ru:
+        bar-dns1.snt.ru:
+        bar-dns2.snt.ru:
+        ns.biysk.ru:  # unreachable
+
+
+
+dv:
+  vars:
+    ansible_become_method: su
+  hosts:
+    dns_dv_212.122.1.2_10.196.247.64:
+    dns_dv_212.122.1.2_10.196.247.65:
+    dns_dv_212.122.1.2_10.196.247.66:
+    dns_dv_212.107.200.68_10.196.247.70:
+    dns_dv_10.255.0.2_10.196.247.17:
+    dns_dv_194.85.113.243_10.198.247.64:
+    dns_dv_194.85.113.243_10.198.247.65:
+    dns_dv_194.85.113.243_10.198.247.66:
+    dns_dv_10.255.1.226_10.198.247.10:
+    dns_dv_89.109.137.182_10.193.247.64:
+    dns_dv_89.109.137.182_10.193.247.65:
+    dns_dv_89.109.137.182_10.193.247.67:
+    dns_dv_89.109.191.42:
+    dns_dv_195.72.250.15_10.197.247.64:
+    dns_dv_195.72.250.15_10.197.247.65:
+    dns_dv_80.73.64.251_10.199.247.64:
+    dns_dv_80.73.64.251_10.199.247.65:
+    dns_dv_10.255.1.210:
+    dns_dv_212.14.192.131_10.195.247.64:
+    dns_dv_212.14.192.131_10.195.247.65:
+    dns_85.28.195.60_10.194.247.64:
+    dns_85.28.195.60_10.194.247.65:
+
+ug:
+  children:
+    ug_su:
+      vars:
+        ansible_become_method: su
+      hosts:
+        dns_ug_stvr_94.255.29.122:
+        dns_ug_stvr_94.255.29.222:
+        dns_ug_stvr_94.255.29.30:
+        dns_ug_stvr_94.255.29.182:
+        dns_ug_stvr_212.96.96.38:
+        dns_ug_stvr_212.96.104.129:
+    ug_su_pass:
+      vars:
+        ansible_become_method: su
+        ansible_ssh_user:  ns
+        ansible_ssh_pass: xxx # PASSWORD SSH
+      hosts:
+        dns_ug_rst_80.254.108.91: # NO PYTHON Invalid/incorrect password: Permission denied, RO flash
+        dns_ug_rst_80.254.108.89: # NO PYTHON Invalid/incorrect password: Permission denied, RO flash
+
+    ug_sudo:
+      vars:
+        ansible_become_method: sudo
+      hosts:
+        dns_ug_ast_62.183.104.14:
+        dns_ug_ast_62.183.109.37:
+        dns_ug_ast_62.183.104.12:
+        dns_ug_ast_62.183.109.34:
+        dns_ug_ast_62.183.104.11:
+        dns_ug_ast_62.183.109.35:
+        dns_ug_vlg_83.239.129.4:
+        dns_ug_vlg_178.35.148.199:
+        dns_ug_kbr_62.183.80.178:
+        dns_ug_kbr_85.173.103.70:
+        dns_ug_svo_83.239.199.220:
+        dns_ug_svo_83.239.199.210:
+        dns_ug_krd_62.183.62.68:
+        dns_ug_krd_62.183.62.69:
+        dns_ug_krd_62.183.62.70:
+        # dns_ug_10.144.35.21:
+        # dns_ug_10.144.35.22:
+        # dns_ug_dag_78.156.230.2:
+        # dns_ug_dag_78.156.231.2:
+        # dns_ug_ing_212.94.0.66:
+
+volga:
+  vars:
+    become: yes
+    become_method: sudo
+    timeout: 120
+    ansible_become_method: sudo
+  hosts:
+    dns_volga_kv-dns-gw1:
+    dns_volga_kv-dns-gw2:
+    dns_volga_kv-dns-node1:
+    dns_volga_kv-dns-node2:
+    dns_volga_kv-dns-node3:
+    dns_volga_kv-dns-node4:
+    dns_volga_kv-dns-node5:
+    dns_volga_kv-dns-node6:
+    dns_volga_kv-ns-auth1:
+    dns_volga_kv-ns-auth2:
+    dns_volga_or-dns-gw1:
+    dns_volga_or-dns-gw2:
+    dns_volga_or-dns-node1:
+    dns_volga_or-dns-node2:
+    dns_volga_or-dns-node3:
+    dns_volga_or-dns-node4:
+    dns_volga_or-dns-node5:
+    dns_volga_or-dns-node6:
+    dns_volga_or-ns-auth1:
+    dns_volga_or-ns-auth2:
+    dns_volga_pz-dns-gw1:
+    dns_volga_pz-dns-gw2:
+    dns_volga_pz-dns-node1:
+    dns_volga_pz-dns-node2:
+    dns_volga_pz-dns-node3:
+    dns_volga_pz-dns-node4:
+    dns_volga_pz-dns-node5:
+    dns_volga_pz-dns-node6:
+    dns_volga_pz-ns-auth1:
+    dns_volga_pz-ns-auth2:
+    dns_volga_sr-dns-gw1:
+    dns_volga_sr-dns-gw2:
+    dns_volga_sr-dns-node1:
+    dns_volga_sr-dns-node2:
+    dns_volga_sr-dns-node3:
+    dns_volga_sr-dns-node4:
+    dns_volga_sr-dns-node5:
+    dns_volga_sr-dns-node6:
+    dns_volga_sr-ns-auth1:
+    dns_volga_sr-ns-auth2:
+    dns_volga_sr-ns-auth3:
+    dns_volga_ud-dns-gw1:
+    dns_volga_ud-dns-gw2:
+    dns_volga_ud-dns-node1:
+    dns_volga_ud-dns-node3:
+    dns_volga_ud-dns-node5:
+    dns_volga_ud-dns-node2:
+    dns_volga_ud-dns-node4:
+    dns_volga_ud-dns-node6:
+    dns_volga_ud-ns-auth1:
+    dns_volga_ud-ns-auth2:
+    dns_volga_nn-dns-gw1:
+    dns_volga_nn-dns-gw2:
+    dns_volga_nn-dns-node1:
+    dns_volga_nn-dns-node2:
+    dns_volga_nn-dns-node3:
+    dns_volga_nn-dns-node4:
+    dns_volga_nn-dns-node5:
+    dns_volga_nn-dns-node6:
+    dns_volga_nn-dns-node7:
+    dns_volga_nn-dns-node8:
+    dns_volga_nn-ns-auth1:
+    dns_volga_nn-ns-auth2:
+    dns_volga_nn-ns-tech1:
+    dns_volga_nn-ns-tech2:
+    dns_volga_ul-dns-gw3:
+    dns_volga_ul-dns-gw4:
+    dns_volga_ul-dns-node11:
+    dns_volga_ul-dns-node12:
+    dns_volga_ul-dns-gw5:
+    dns_volga_ul-dns-gw6:
+    dns_volga_ul-dns-node21:
+    dns_volga_ul-dns-node22:
+    dns_volga_ul-dns-node23:
+    dns_volga_ul-dns-node24:
+    dns_volga_ch-dns-gw3:
+    dns_volga_ch-dns-gw4:
+    dns_volga_ch-dns-node11:
+    dns_volga_ch-dns-node12:
+    dns_volga_ch-dns-node13:
+    dns_volga_ch-dns-node14:
+    dns_volga_ch-dns-node15:
+    dns_volga_ch-dns-node16:
+    dns_volga_ch-ns-auth1:
+    dns_volga_ch-ns-auth2:
+    dns_volga_ch-dns9-gw9:
+    dns_volga_ch-dns9-node21:
+    dns_volga_sm-dns-gw3:
+    dns_volga_sm-dns-gw4:
+    dns_volga_sm-dns-node11:
+    dns_volga_sm-dns-node12:
+    dns_volga_sm-dns-node13:
+    dns_volga_sm-dns-node14:
+    dns_volga_sm-dns-node15:
+    dns_volga_sm-dns-node16:
+    dns_volga_sm-dns-node17:
+    dns_volga_sm-dns-node18:
+    dns_volga_sm-dns-node19:
+    dns_volga_sm-dns-node20:
+    dns_volga_md-dns-gw1:
+    dns_volga_md-dns-gw2:
+    dns_volga_md-dns-node1:
+    dns_volga_md-dns-node2:
+    dns_volga_md-dns-node3:
+    dns_volga_md-dns-node4:
+    dns_volga_md-dns-node5:
+    dns_volga_md-dns-node6:
+    dns_volga_tt-dns-gw1:
+    dns_volga_tt-dns-gw2:
+    dns_volga_tt-dns-node1:
+    dns_volga_tt-dns-node2:
+    dns_volga_tt-dns-node3:
+    dns_volga_tt-dns-node4:
+    dns_volga_tt-dns-node5:
+    dns_volga_tt-dns-node6:
+    dns_volga_tt-ns-auth1:
+    dns_volga_tt-ns-auth2:
+    dns_volga_tt-ns-auth3:
+
+
+center_mr:
+  children:
+
+    center_dns: 
+      vars:
+        ansible_become_method: sudo
+        jump_skud_host: JH-U1-UG-MPLS
+      hosts:
+        46.61.210.130: # cnt-dns1
+        46.61.210.134: # cnt-dns2
+        46.61.210.138: # cnt-dns3
+        46.61.210.142: # cnt-dns4
+
+    center_belgorod: 
+    # jumphost 10.156.81.248 через СКУД2.5 JH-U1-CNT-v2170-Belgorod
+    # какие то глюки с ансиблом
+      vars:
+        jump_skud_host: JH-U1-CNT-v2170-Belgorod
+        # ansible_su_pass: FF1497ahb
+        # ansible_become_method: su
+        # become_user: root
+      hosts:
+        82.151.98.154: # sudo: not found
+        82.151.97.50:  # уже в СЗ убунта
+        82.151.98.162: # sudo: not found готовиться к переносу в СЗ 
+        82.151.96.174: # Connection timed out during banner exchange готовиться к переносу в СЗ
+        # 82.151.104.154: # выключен
+        # 10.154.200.98: #jump  "Incorrect sudo password"
+
+    center_braynsk: 
+    # НЕРАБОТАЕТ СКУД2.5
+    ### AllowUsers в sshd_config
+      vars:
+        ansible_become_method: sudo 
+        jump_skud_host: JH-U1-UG-MPLS 
+        # jump_skud_host: JH-U1-CNT-v2171-Bransk
+      hosts:
+        84.42.48.10: #
+        84.42.50.30: # 
+        84.42.77.77: #
+        84.42.77.66: #
+
+    center_vladimir: 
+    # НЕРАБОТАЕТ СКУД2.5
+      vars:
+        ansible_become_method: sudo
+        jump_skud_host: 62.183.63.82
+        # jump_skud_host: JH-U1-CNT-v2172-Vladimir
+      hosts:
+        84.53.200.24: 
+        84.53.199.254:
+        84.53.199.250:
+        84.53.200.7:
+
+    center_voronezh: 
+    # СКУД2.5 JH-U1-UG-MPLS
+      vars:
+        ansible_become_method: sudo
+        jump_skud_host: JH-U1-UG-MPLS
+        # jump_skud_host: JH-U1-CNT-v2173-Voronezh
+      hosts:
+        80.82.32.9:   # ns.vsi.ru
+        80.82.33.65:  # ns2.vsi.ru
+        80.82.36.124: # ns3.vsi.ru VM 
+        80.82.32.119: # ns3.vsi.ru HOST
+        80.82.36.116: # ns4.vsi.ru VM
+        80.82.32.118: # ns4.vsi.ru HOST
+
+    center_ivanovskaya:
+    # СКУД2.5 JH-U1-CNT-v2174-Ivanovskaya
+    ### AllowUsers в sshd_config
+      vars:
+        ansible_become_method: sudo
+        jump_skud_host: JH-U1-CNT-v2174-Ivanovskaya
+      hosts:
+        10.202.204.6:  #81.20.96.254   
+        10.202.204.10: #81.20.97.254 
+        10.202.204.14: #212.124.31.238
+        10.202.204.2:  #212.124.31.234
+
+    center_kaluga: 
+    # СКУД2.5 JH-U1-UG-MPLS
+      vars:
+        ansible_become_method: sudo
+        jump_skud_host: JH-U1-UG-MPLS
+        # jump_skud_host: JH-U1-CNT-v2175-Kaluga
+      hosts:
+        62.148.128.1:
+        62.148.159.188:
+        62.148.128.9:    # ns4.kaluga.ru
+        62.148.159.187:  # ns5.kaluga.ru
+
+    center_kostroma: # Канов Андрей Николаевич 
+    # СКУД2.5 JH-S1-CNT-v2176-Kostroma
+      vars:
+        ansible_become_method: sudo
+        jump_skud_host: JH-S1-CNT-v2176-Kostroma
+      hosts:
+        192.168.78.18:
+        192.168.78.22:
+        192.168.78.21:
+        192.168.78.26:
+        192.168.78.19:
+        192.168.78.20:
+    
+    center_kursk:
+    # СКУД2.5 JH-U1-UG-MPLS
+      vars:
+        ansible_become_method: sudo
+        jump_skud_host: JH-U1-UG-MPLS
+      hosts:
+        80.240.240.34: # 10.48.58.25
+        80.240.240.50: # 10.48.58.35
+        80.240.240.2:  ## ДОСТУПА НЕТ ##
+        80.240.242.110: # 
+
+    center_lipetsk:
+    # Доступа со СКУД2.5 нет
+    # сетки там посажены на внутренние DR. 
+    # Чтобы доступ через СКУД появился, нужно все сервера переносить в новые белые сети
+    # еще и разные AS
+      vars:
+        ansible_become_method: sudo
+        jump_skud_host: 62.183.63.82
+        # jump_skud_host: JH-U1-CNT-v2178-Lipetsk
+      hosts:
+        195.34.224.1:
+        195.34.224.2: #Old python Current version: 3.4.1
+        195.34.232.3:
+        195.34.224.3:
+
+    center_orel: #Белашов Андрей Викторович
+    # СКУД2.5 JH-U1-UG-MPLS
+      vars:
+        ansible_become_method: sudo
+        jump_skud_host: JH-U1-UG-MPLS
+        # jump_skud_host: JH-U1-CNT-v2179-Orlov
+      hosts:
+        95.107.48.49:
+        95.107.47.9:
+        95.107.48.98:
+        95.107.47.5:
+
+    center_ryazan:
+    # СКУД2.5 JH-U1-UG-MPLS
+      vars:
+        ansible_become_method: sudo
+        jump_skud_host: JH-U1-UG-MPLS
+        # jump_skud_host: JH-U1-CNT-v2180-Ryazan
+      hosts:
+        212.26.224.132:
+        212.26.224.133:
+        212.26.224.140:
+        212.26.224.141:
+        212.26.224.82:
+        212.26.230.2:
+
+    center_smolensk:
+    # СКУД2.5 JH-U1-CNT-v2181-Smolensk
+      vars:
+        ansible_become_method: sudo
+        jump_skud_host: JH-U1-CNT-v2181-Smolensk
+      hosts:
+        10.53.67.97:
+        10.53.67.98:
+        10.53.67.94:
+        10.53.66.55:
+        10.53.67.96:
+        sml-ddns1: # RedOS Dnsdist test
+        sml-ddns2: # RedOS Dnsdist test
+        sml-ddns3:
+    center_tambov: 
+    # НЕТ СКУД2.5 AS13056
+      vars:
+        ansible_become_method: sudo
+        jump_skud_host: JH-U1-CNT-v2182-Tambov
+      hosts:
+        213.135.128.2:
+        78.132.128.2:
+        213.135.128.3:
+        78.132.128.3:
+        # 78.132.128.34: # tmb-dhcp01 объект КИИ ДОСТУПА НЕТ и не дает
+        # 78.132.128.38: # tmb-dhcp02 объект КИИ ДОСТУПА НЕТ и не дает
+
+    center_tver: 
+    # СКУД2.5 AS21378
+      vars:
+        ansible_become_method: sudo
+        jump_skud_host: JH-U1-UG-MPLS
+      hosts:
+        84.42.14.2: 
+        84.42.14.3: # ДОСТУПА НЕТ
+        84.42.0.34: # ДОСТУПА НЕТ
+        84.42.0.35: # ДОСТУПА НЕТ
+        80.246.64.2: # ДОСТУПА НЕТ
+
+    center_tula: 
+    # СКУД2.5 JH-U1-CNT-v2181-Smolensk
+      vars:
+        ansible_become_method: sudo
+        jump_skud_host: JH-U1-CNT-v2184-Tula
+      hosts:
+        10.250.1.112: # 212.12.11.43:
+        10.250.1.113: # 212.12.11.44:
+        10.250.1.10:  # 212.12.0.2:
+        10.250.1.13:  # 212.12.0.3:
+
+
+    center_yaroslavl: # Волошин Виктор Владимирович? 
+    # СКУД2.5 JH-U1-UG-MPLS
+    ### AllowUsers в sshd_config
+      vars:
+        ansible_become_method: sudo
+        jump_skud_host: JH-U1-UG-MPLS
+        # jump_skud_host: JH-U1-CNT-v2185-Yaroslavl
+      hosts:
+        217.15.134.65: 
+        217.15.135.68:
+        217.15.134.62:
+        87.253.13.14:
+
+
+srv_center_dhcp:
+  children:
+
+    srv_cnt_dhcp: 
+      vars:
+        ansible_become_method: sudo
+      hosts:
+        10.250.125.47: #m7-cnt-isc-dhcp
+
+
+    srv_belgorod_dhcp: 
+
+    srv_bryansk_dhcp: 
+    #не работает СКУД2.5 Алексей Абрамов
+      vars:
+        ansible_become_method: sudo 
+        jump_skud_host: JH-U1-CNT-v2171-Bransk
+#        # ansible_ssh_extra_args: -o ProxyCommand="sshpass -f'{{ jump_skud_pass }}' ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p {{ jump_skud_user }}@{{ jump_skud_host }}" 
+      hosts:
+#        192.168.232.24: #DHCP-сервер для SIP
+#        192.168.232.25: #DHCP-сервер для SIP
+        192.168.232.15: #DHCP-сервер для IPTV
+        192.168.232.16: #DHCP-сервер для IPTV
+
+    srv_vladimir_dhcp: 
+      vars:
+        ansible_become_method: sudo
+#        #jump_skud_host: JH-U1-CNT-v2172-Vladimir
+#        jump_skud_host: JH-U1-CNT-v2181_Smolensk
+      hosts:
+        10.59.2.73: #vla-dhcp01
+        10.59.2.74: #vla-dhcp02
+
+    srv_voronezh_dhcp: 
+      vars:
+        ansible_become_method: sudo
+        jump_skud_host: JH-U1-CNT-v2173-Voronezh
+      hosts:
+        10.76.254.26: #vrzh-dhcp01
+        10.76.254.22: #vrzh-dhcp02
+        10.60.242.4:  #vrzh-dhcp01-voip
+        10.60.242.12: #vrzh-dhcp02-voip
+
+    srv_kaluga_dhcp: 
+      vars:
+        ansible_become_method: sudo
+#        #jump_skud_host: JH-U1-CNT-v2175-Kaluga
+#        jump_skud_host: JH-U1-CNT-v2181_Smolensk
+      hosts:
+        10.46.219.4:  #klg-dhcp01
+        10.46.219.12: #klg-dhcp02
+
+    srv_kursk_dhcp: 
+      vars:
+        ansible_become_method: sudo
+        jump_skud_host: JH-U1-CNT-v2177-Kursk
+      hosts:
+        10.90.129.2:  #kur-dhcp01
+        10.90.129.10: #kur-dhcp02
+
+    srv_lipetsk_dhcp: 
+      vars:
+        ansible_become_method: sudo
+        jump_skud_host: JH-U1-CNT-v2178-Lipetsk
+      hosts:
+        172.30.120.66:  #lip-dhcp01
+        172.30.120.70:  #lip-dhcp02
+
+    srv_orel_dhcp: 
+      vars:
+        ansible_become_method: sudo
+        jump_skud_host: JH-U1-UG-MPLS
+      hosts:
+        95.107.48.58:  #orel-dhcp01
+        95.107.48.62:  #orel-dhcp02
+
+    srv_ryazan_dhcp: 
+      vars:
+        ansible_become_method: sudo
+        jump_skud_host: JH-U1-CNT-v2180-Ryazan
+      hosts:
+        172.31.101.134:  #rzn-dhcp01
+        172.31.34.166:   #rzn-dhcp02
+
+    srv_smolensk_dhcp: 
+      vars:
+        ansible_become_method: sudo
+#        jump_skud_host: JH-U1-CNT-v2181-Smolensk
+      hosts:
+#        10.53.66.42:   #sml-dhcp01
+#        10.53.66.22:   #sml-dhcp02
+         sml-dhcp01:
+         sml-dhcp02:
+
+    srv_tmb_dhcp: 
+      vars:
+        ansible_become_method: sudo
+        jump_skud_host: JH-U1-UG-MPLS
+      hosts:
+        78.132.128.34:   #tmb-dhcp01
+        78.132.128.38:   #ttmb-dhcp02
+
+    srv_tula_dhcp: 
+      vars:
+        ansible_become_method: sudo
+#        jump_skud_host: JH-U1-CNT-v2181-Smolensk
+      hosts:
+        10.57.251.21:   #tula-dhcp01
+        10.57.251.22:   #tula-dhcp02
+
+    srv_tvr_dhcp: 
+      vars:
+        ansible_become_method: sudo
+#        jump_skud_host: JH-U1-CNT-v2181-Smolensk
+      hosts:
+        10.58.198.246:   #tvr-dhcp01
+        10.58.198.254:   #tvr-dhcp02
+
+    srv_ykf_dhcp: 
+      vars:
+        ansible_become_method: sudo
+#        jump_skud_host: JH-U1-CNT-v2181-Smolensk
+      hosts:
+        10.61.147.228:   #ykf-dhcp01
+        10.61.139.228:   #ykf-dhcp02
+
+srv_center:
+  children:
+    srv_belgorod: 
+    #работает через JUMP 10.156.81.248 а он через СКУД2.5
+      vars:
+        ansible_become_method: sudo 
+        # ansible_user: root
+        jump_skud_host: JH-U1-CNT-v2170-Belgorod
+      hosts:
+        #10.156.81.248:  # JUMP host Белгородская
+        10.156.80.6:      # blgd-dhcp01
+        10.156.81.6:      # blgd-dhcp02
+
+
+    #################
+    ## ДОСТУПА НЕТ ##
+    #################
+    srv_braynsk_dhcp: 
+    #не работает СКУД2.5 Алексей Абрамов
+      vars:
+        ansible_become_method: sudo 
+        jump_skud_host: JH-U1-CNT-v2171-Bransk
+        # ansible_ssh_extra_args: -o ProxyCommand="sshpass -f'{{ jump_skud_pass }}' ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p {{ jump_skud_user }}@{{ jump_skud_host }}" 
+      hosts:
+        192.168.232.22: #Primary TACACS+ (РСПД)
+        192.168.232.23: #Secondary TACACS+ (РСПД)
+        87.226.170.217: #AAA TACACS+ (ЦМУ)
+        87.226.170.219: #AAA TACACS+ (ЦМУ)
+        10.43.128.34:   #CDN
+        84.42.49.14:    #CDN
+
+    srv_vladimir: 
+      vars:
+        ansible_become_method: sudo
+        jump_skud_host: JH-U1-CNT-v2172-Vladimir
+      hosts:
+
+
+    srv_voronezh: 
+    #работает СКУД2.5 JH-U1-CNT-v2173-Voronezh
+      vars:
+        # ansible_become_method: sudo 
+      hosts:
+        10.60.242.4:  # dhcpvoip1.vsi.ru RSA заведены пользователи и в мониторинге
+        10.60.242.12: # dhcpvoip2.vsi.ru RSA заведены пользователи и в мониторинге
+        10.76.254.22: # vrzh-dhcp02  заведены пользователи и в мониторинге
+        10.76.254.26: # vrzh-dhcp01  заведены пользователи и в мониторинге
+        10.76.254.18: # RADIUS
+        #80.82.32.12:  # serv1.vsi.ru
+        #80.82.32.25:  # mon.vsi.ru
+
+
+    srv_ivanovskaya:
+      vars:
+        ansible_become_method: sudo 
+        jump_skud_host: JH-U1-CNT-v2174-Ivanovskaya
+      hosts:
+        10.202.204.30: # Radius
+        10.202.204.26: # Radius
+        10.202.204.18: # DHCP vIMS SIP
+        10.202.204.22: # DHCP vIMS SIP
+        10.202.204.50: # mail
+        10.202.204.46: # syslog
+
+
+    srv_kaluga: 
+    # СКУД 2.5 JH-U1-UG-MPLS JH-U1-CNT-v2175-Kaluga
+      vars:
+        ansible_become_method: sudo 
+        jump_skud_host: JH-U1-CNT-v2175-Kaluga
+      hosts:
+        62.148.128.27:  # radius01 zabb+users
+        62.148.128.24:  # radius02 zabb+users
+        62.148.159.189: # kraken-proxy
+        62.148.128.198: # 10.46.147.5 SYSLOG
+        62.148.128.2:   # lancia.kaluga.ru
+        62.148.159.190: # WWW dolphin.obninsk.com
+        #OLD python FreeBSD заводить руками
+        62.148.128.5:   # coyote-vhosting 
+
+
+    srv_kostroma: # Канов Андрей Николаевич 
+      vars:
+        ansible_become_method: sudo
+        jump_skud_host: JH-S1-CNT-v2176-Kostroma
+      hosts:
+
+
+    srv_kursk:
+      vars:
+        ansible_become_method: sudo 
+        jump_skud_host: JH-U1-CNT-v2177-Kursk
+      hosts:
+        10.90.129.2:  # kur-dhcp01
+        10.90.129.10: # kur-dhcp02
+        10.90.0.2:    # radius
+        10.90.0.3:    # radius
+
+
+    srv_lipetsk:
+      vars:
+        ansible_become_method: sudo
+        jump_skud_host: JH-U1-CNT-v2178-Lipetsk
+      hosts:
+        192.168.101.141: # 195.34.232.98 jail tacacs+
+        192.168.101.37:  # 195.34.232.77  host tacacs+
+        172.30.120.66:   # 10.49.11.242 lip-dhcp0
+        172.30.120.70:   # 10.49.11.250 lip-dhcp1
+        192.168.101.80:  # gpon-dhcp
+        195.34.249.137:  # mail.lipetsk.ru НЕДОСТУПНО
+        195.34.249.136:  # webmail   НЕДОСТУПНО
+
+
+    srv_orel:
+      vars:
+        ansible_become_method: sudo 
+        jump_skud_host: JH-U1-CNT-v2179-Orlov
+      hosts:
+        10.51.198.126: #DHCP
+        10.51.198.131: #DHCP
+
+
+    srv_ryazan: 
+    # СКУД 2.5 JH-U1-CNT-v2180-Ryazan
+      vars:
+        ansible_become_method: sudo 
+        jump_skud_host: JH-U1-CNT-v2180-Ryazan
+      hosts:
+        172.31.34.166:  # rzn-dhcp02 monintoring 10.52.121.20 доступны с zabbix-proxy-sz-tv
+        172.31.101.134: # rzn-dhcp01 monintoring 10.52.33.62 доступны с zabbix-proxy-sz-tv
+        172.16.101.82:  # rzn-radius01 slakware 13 логин без точки
+        172.16.101.83:  # rzn-radius02 10.52.32.66 доступны с zabbix-proxy-sz-tv
+
+
+    srv_smolensk: 
+    #СКУД2.5 JH-U1-CNT-v2181-Smolensk
+      vars:
+        ansible_become_method: sudo 
+        jump_skud_host: JH-U1-CNT-v2181-Smolensk
+      hosts:
+        10.53.66.42:  # RSA sml-dhcp01
+        10.53.66.22:  # RSA sml-dhcp02
+#        172.22.97.10: # RedOS Dnsdist test
+#        172.22.97.12: # RedOS Dnsdist test
+        212.3.133.33: # Почтовый сервер внешних клиентов
+        10.53.67.164: # Web-сервер, ftp-сервер внешних клиентов
+
+        10.53.66.53: #timed out Сервис-активатор
+        10.53.67.185: # timed out Сервер резервного копирования 
+        10.53.67.166: #TACACS и Radius для доступа на оборудование ШПД
+        10.53.67.102: # Сервер Iperf 3.7 для тестирования скорости ШПД
+        10.53.67.55: # FTP сервер для хранения прошивок
+#        10.53.67.134: # RedOS Dnsdist test
+        10.53.67.165:
+        10.53.67.100:
+        10.53.53.12: #sml-dnsdist2
+
+    srv_tambov:
+      vars:
+        ansible_become_method: sudo
+        jump_skud_host: JH-U1-CNT-v2182-Tambov
+      hosts:
+
+
+    srv_tip: 
+      vars:
+        ansible_become_method: sudo
+#        jump_skud_host: JH-U1-CNT-v2183-Tver
+      hosts:
+       172.17.3.5:
+       172.17.3.6:
+       172.17.3.7:
+       172.17.3.8:
+       172.17.3.9:
+       172.17.3.10:
+       172.17.3.11:
+       172.17.3.12:
+       172.17.3.13:
+       172.17.3.14:
+       172.17.3.15:
+       172.17.3.16:
+       172.17.3.17:
+       172.17.3.18:
+       172.17.3.19:
+       172.17.3.20:
+       172.17.3.21:
+       172.17.3.22:
+       172.17.3.23:
+       172.17.3.24:
+       172.17.3.28:
+       172.17.3.29:
+#       172.17.3.251:
+#       172.17.3.8:
+#       172.17.3.9:
+#       192.168.20.4:
+#       192.168.20.5:
+#       192.168.101.118:
+#       192.168.101.119:
+       192.168.101.197:
+
+    srv_tula:
+      vars:
+        ansible_become_method: sudo 
+        jump_skud_host: JH-U1-CNT-v2184-Tula
+      hosts:
+        10.34.17.235: # radius
+        10.34.17.234: # radius
+        10.57.251.21: # DHCP не принимает ключ  через липецкий iptv-dhcp 172.30.120.66
+        10.57.251.22: # DHCP CNT-RF-TULA-DHCP02 через липецкий iptv-dhcp 172.30.120.66
+
+
+    srv_yaroslavl:
+      vars:
+        ansible_become_method: sudo
+        jump_skud_host: JH-U1-CNT-v2185-Yaroslavl
+      hosts:
+
+
+#    srv_tip:
+#      vars:
+#        ansible_become_method: sudo
+#     hosts:
+#       172.17.3.5:
+#       172.17.3.6:
+#       172.17.3.11:
+#       172.17.3.12:
+#       172.17.3.113:
+#       172.17.3.112:
+#       172.17.3.15:
+#
+
+
+    # srv_krdr:
+    #   vars:
+    #     ansible_become_method: sudo 
+    #   hosts:
+    #     62.183.63.82: # jh краснодар
+
+
+# srv_volga:
+#   children:
+#     srv_cheb:       
+#       vars:
+#         ansible_become_method: sudo 
+#         # ansible_sudo_pass: 
+#       hosts:
+#         89.151.191.4:
+#         10.58.168.130:
+#         10.58.168.250:
+
+
+
+
+
+
+# jumpskud:
+#   vars:
+#   hosts:
+#     JH-U1-DV-v10192-AF:
+#     JH-U1-DV-v10193-KF:
+#     JH-U1-DV-v10194-MF:
+#     JH-U1-DV-v10195-PF:
+#     JH-U1-DV-v10196-STK:
+#     JH-U1-DV-v10197-SF:
+#     JH-U1-DV-v10198-HF:
+#     JH-U1-SZ-v120-sztsa:
+#     JH-U1-PV-v700-tech-mgmt:
+#     JH-U1-UR-v6338-INITI:
+#     JH-U1-UG-v3715-KRDR:
+#     JH-U1-UG-v3716-VGRD:
+#     JH-U1-UG-v3717-ADG:
+#     JH-U1-UG-v3718-DAG:
+#     JH-U1-UG-v3719-ASTR:
+#     JH-U1-UG-v3720-NCHK:
+#     JH-U1-UG-v3721-ELST:
+#     JH-U1-UG-v3722-KCH:
+#     JH-U1-UG-v3723-RND:
+#     JH-U1-UG-v3724-VLKZ:
+#     JH-U1-UG-v3725-STV:
+#     JH-U1-UG-template:
+#     JH-U1-UG-MPLS:
+#     JH-U1-SIB-v3663-Siberia:
+#     JH-U1-CNT-v2170-Belgorod:
+#     JH-U1-CNT-v2171-Bransk:
+#     JH-U1-CNT-v2172-Vladimir:
+#     JH-U1-CNT-v2173-Voronezh:
+#     JH-U1-CNT-v2174-Ivanovskaya:
+#     JH-U1-CNT-v2175-Kaluga:
+#     JH-U1-CNT-v2176-Kostroma:
+#     JH-U1-CNT-v2177-Kursk:
+#     JH-U1-CNT-v2178-Lipetsk:
+#     JH-U1-CNT-v2179-Orlov:
+#     JH-U1-CNT-v2180-Ryazan:
+#     JH-U1-CNT-v2181-Smolensk:
+#     JH-U1-CNT-v2182-Tambov:
+#     JH-U1-CNT-v2183-Tver:
+#     JH-U1-CNT-v2184-Tula:
+#     JH-U1-CNT-v2185-Yaroslavl:
+#     JH-U1-CNT-v2186-MOUTE:
+#     JH-U1-CNT-v2187-NKS:
+#     JH-U1-CNT-v2188-MoskvaCT:
+#     JH-U1-CNT-v16740-Rosnet:
+#     JH-U1-CNT-v16741-Lextar:
+
